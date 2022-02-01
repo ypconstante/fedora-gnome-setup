@@ -1,0 +1,53 @@
+[feature]
+    manyFiles = true
+[core]
+    commitGraph = true
+    multiPackIndex = true
+    pager = delta
+
+[color]
+    ui = true
+[commit]
+    gpgsign = true
+[delta]
+    features = side-by-side line-numbers decorations
+    whitespace-error-style = 22 reverse
+[delta "decorations"]
+    commit-decoration-style = bold yellow box ul
+    file-style = bold yellow ul
+    file-decoration-style = none
+[diff]
+    mnemonicprefix = true
+    algorithm = patience
+    compactionHeuristic = true
+[fetch]
+    prune = true
+    pruneTags = true
+    writeCommitGraph = true
+[gc]
+    writeCommitGraph = true
+[init]
+    defaultBranch = main
+[interactive]
+    diffFilter = delta --color-only
+[log]
+    abbrevCommit = true
+[merge]
+    tool = meld
+[mergetool]
+    keepBackup = false
+    keepTemporaries = false
+    prompt = false
+[pull]
+    rebase = true
+[push]
+    followTags = true
+[rebase]
+    abbreviateCommands = true
+    autoSquash = true
+    autoStash = true
+[rerere]
+    enabled = true
+    autoUpdate = true
+[status]
+    submoduleSummary = true

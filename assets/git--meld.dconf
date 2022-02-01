@@ -1,0 +1,9 @@
+[/]
+enable-space-drawer=false
+highlight-current-line=false
+highlight-syntax=true
+indent-width=4
+insert-spaces-instead-of-tabs=false
+show-line-numbers=true
+style-scheme='solarized-dark'
+wrap-mode='none'
