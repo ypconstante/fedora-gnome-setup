@@ -1,0 +1,62 @@
+export LANG="en_US.UTF-8"
+
+export EDITOR="nano"
+export VISUAL="$EDITOR"
+export PAGER="less"
+
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
+
+# Custom
+export TOOLBOX_CONTAINER="fedora-toolbox"
+
+# Non standard
+export XDG_LIB_HOME="$HOME/.local/lib"
+
+# Android - https://developer.android.com/studio/command-line/variables
+export ANDROID_PREFS_ROOT="$XDG_DATA_HOME/android"
+export ANDROID_SDK_HOME="$ANDROID_PREFS_ROOT"
+export ANDROID_SDK_ROOT="$ANDROID_PREFS_ROOT/sdk"
+export ANDROID_HOME="$ANDROID_SDK_ROOT"
+
+export ANDROID_EMULATOR_HOME="$ANDROID_PREFS_ROOT/emulator"
+export ANDROID_AVD_HOME="$ANDROID_PREFS_ROOT/avd"
+
+export ANDROID_PATHS="$ANDROID_SDK_ROOT/emulator:$ANDROID_SDK_ROOT/platform-tools:$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/tools/bin"
+
+# ASDF
+export ASDF_DIR="$XDG_DATA_HOME/asdf"
+export ASDF_CONFIG_FILE="$XDG_CONFIG_HOME/asdf"
+export ASDF_DATA_DIR="$XDG_LIB_HOME/asdf"
+export ASDF_PATHS="$ASDF_DATA_DIR/shims:$XDG_DATA_HOME/asdf/bin"
+
+# Podman / Docker
+export DOCKER_HOST="unix:///run/user/$UID/podman/podman.sock"
+
+# Node
+export NODE_REPL_HISTORY="$XDG_STATE_HOME/node_repl_history"
+export NPM_CONFIG_CACHE=$XDG_LIB_HOME/npm
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
+
+# Python
+export PIP_REQUIRE_VIRTUALENV=true
+export AUTOSWITCH_VIRTUAL_ENV_DIR=".local/venv"
+export IPYTHONDIR="$XDG_STATE_HOME/ipython"
+
+# Fix applications to respect XDG
+export CUDA_CACHE_PATH="$XDG_CACHE_HOME/cuda-nv"
+export DVDCSS_CACHE="$XDG_DATA_HOME/dvdcss"
+export GOPATH="$XDG_DATA_HOME/go"
+export GRADLE_USER_HOME="$XDG_STATE_HOME/gradle"
+export HISTFILE="$XDG_STATE_HOME/bash/history"
+export _JAVA_OPTIONS="-Djava.util.prefs.userRoot=$XDG_CONFIG_HOME/java"
+export LESSHISTFILE=-
+export MIX_XDG=1
+export SPACEMACSDIR="$XDG_CONFIG_HOME/spacemacs"
+export WGETRC="$XDG_CONFIG_HOME/wgetrc"
+
+# Path
+export DEFAULT_PATH="$PATH"
+export PATH="$ASDF_PATHS:$DEFAULT_PATH:$HOME/.local/bin:$ANDROID_PATHS"
