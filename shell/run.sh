@@ -7,3 +7,5 @@ source "$(dirname "${BASH_SOURCE[0]}")/_base.sh"
 ./environment.sh
 ./git.sh
 ./toolbox.sh
+
+./terminal.sh

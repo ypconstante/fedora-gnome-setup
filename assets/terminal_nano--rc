@@ -1,0 +1,31 @@
+# Use bold instead of reverse video
+set boldtext
+
+# Characters treated as closing brackets when justifying paragraphs
+set brackets ""')>]}"
+
+# Constantly display the cursor position in the status bar
+set constantshow
+
+# Opening and closing brackets that can be found by bracket searches
+set matchbrackets "(<[{)>]}"
+
+# Enable mouse support
+set mouse
+
+# Characters treated as closing punctuation when justifying paragraphs
+set punct "!.?"
+
+# Do extended regular expression searches by default
+set regexp
+
+# Better home key when line starts with space
+set smarthome
+
+# Allow nano to be suspended with ^Z
+set suspend
+
+set tabsize 4
+set tabstospaces
+
+include ~/.config/nano/syntax/*.nanorc

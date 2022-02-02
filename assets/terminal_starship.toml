@@ -1,0 +1,59 @@
+format = """
+$cmd_duration\
+$status\
+$line_break\
+$shell\
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_status\
+$golang\
+$java\
+$nodejs\
+$python\
+$docker_context\
+$jobs\
+$line_break\
+$character\
+"""
+
+add_newline = false
+
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold green)"
+
+[cmd_duration]
+format = "Command took [$duration]($style)\n"
+
+[directory]
+truncation_length = 0
+
+[docker_context]
+format = "with [$symbol]($style) "
+detect_files = ["docker-compose.yml", "docker-compose.yaml"]
+
+[git_branch]
+symbol = ""
+
+[git_status]
+ahead = "Λ${count}"
+diverged = "Λ${ahead_count} V${behind_count}"
+behind = "V${count}"
+
+[nodejs]
+symbol = "⬢ "
+
+[shell]
+disabled = false
+format = "[$indicator]($style)"
+bash_indicator = "bash "
+fish_indicator = ""
+unknown_indicator = "mystery shell"
+
+[status]
+disabled = false
+format = "[$symbol Command failed $common_meaning$signal_name$maybe_int]($style)\n"
