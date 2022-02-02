@@ -29,7 +29,10 @@ SCRIPTS_DIR=$(dirname "$BASE_FILE_PATH")
 PROJECT_DIR=$(realpath "$SCRIPTS_DIR/..")
 ASSETS_DIR=$(realpath "$PROJECT_DIR/assets")
 
+RELEASE_NUMBER=$(rpm -E %fedora)
+
 export ASSETS_DIR
+export RELEASE_NUMBER
 
 cd "$SCRIPTS_DIR" || exit
 
@@ -214,7 +217,7 @@ my:git-clone() {
 my:toolbox-run() {
     local SCRIPT="source '$SCRIPTS_DIR/_base.sh';${*@Q};"
 
-    toolbox run -c "$TOOLBOX_CONTAINER" bash -c "$SCRIPT"
+    toolbox run bash -c "$SCRIPT"
 }
 
 my:toolbox-dnf-install() {

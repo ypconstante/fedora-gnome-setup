@@ -6,3 +6,4 @@ source "$(dirname "${BASH_SOURCE[0]}")/_base.sh"
 ./prepare.sh
 ./environment.sh
 ./git.sh
+./toolbox.sh
