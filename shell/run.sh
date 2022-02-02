@@ -11,3 +11,4 @@ source "$(dirname "${BASH_SOURCE[0]}")/_base.sh"
 ./terminal.sh
 ./backup.sh
 ./battery.sh
+./boot.sh
