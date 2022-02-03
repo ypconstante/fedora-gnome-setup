@@ -5,6 +5,8 @@
     multiPackIndex = true
     pager = delta
 
+[advice]
+    detachedHead = false
 [color]
     ui = true
 [commit]
