@@ -16,3 +16,4 @@ source "$(dirname "${BASH_SOURCE[0]}")/_base.sh"
 ./communication.sh
 ./dev.sh
 ./file-system.sh
+./media.sh
