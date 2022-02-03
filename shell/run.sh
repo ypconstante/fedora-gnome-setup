@@ -14,3 +14,5 @@ source "$(dirname "${BASH_SOURCE[0]}")/_base.sh"
 ./boot.sh
 ./browser.sh
 ./communication.sh
+./dev.sh
+./file-system.sh
