@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Name=Temp Firefox
+Comment=Browse the Web
+GenericName=Web Browser
+Keywords=web;browser;internet;
+Exec=firefox-temp
+Terminal=false
+Type=Application
+Icon=firefox
+Categories=Network;WebBrowser;
+StartupNotify=true
+NoDisplay=false

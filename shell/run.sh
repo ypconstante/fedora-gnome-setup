@@ -12,3 +12,4 @@ source "$(dirname "${BASH_SOURCE[0]}")/_base.sh"
 ./backup.sh
 ./battery.sh
 ./boot.sh
+./browser.sh

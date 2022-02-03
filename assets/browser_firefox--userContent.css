@@ -1,0 +1,34 @@
+body * {
+    scrollbar-width: thin;
+}
+
+@-moz-document url("about:home"), url("about:newtab") {
+    body {
+        background-color:  #2B2A33 !important;
+    }
+
+    .top-site-outer .tile {
+        box-shadow: none !important;
+    }
+
+    .top-site-outer .title .icon {
+        display: none !important;
+    }
+
+    .top-site-outer .tile .icon-wrapper {
+        width: 80px !important;
+        height: 80px !important;
+    }
+
+    .top-site-outer .tile,
+    .top-site-outer .top-site-icon {
+        background-color: unset !important;
+    }
+}
+
+@-moz-document regexp("moz-extension://.+/sidebar/sidebar.html.*") {
+  :root,
+  #background {
+    background-color: #2B2A33 !important;
+  }
+}
