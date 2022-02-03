@@ -1,0 +1,9 @@
+// SublimeLinter Settings - User
+{
+    "linters": {
+        "shellcheck": {
+            "args": ["-x"],
+            "working_dir": "$file_path"
+        }
+    }
+}

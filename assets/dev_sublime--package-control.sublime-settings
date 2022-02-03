@@ -1,0 +1,25 @@
+{
+	"bootstrapped": true,
+    "auto_upgrade_frequency": 12,
+    "submit_usage": false,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"AutoFileName",
+		"Dockerfile Syntax Highlighting",
+		"EditorConfig",
+		"ElixirSyntax",
+		"fish",
+		"LSP",
+		"LSP-bash",
+		"LSP-elixir",
+		"LSP-json",
+		"LSP-yaml",
+		"Package Control",
+		"SideBarEnhancements",
+		"SublimeLinter",
+		"SublimeLinter-shellcheck",
+	],
+}

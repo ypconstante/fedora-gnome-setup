@@ -1,0 +1,29 @@
+{
+  "autostart" : false,
+  "channel_rollback_max_history" : 1,
+  "privacy_policy" : {
+    "eua_accepted_version" : "1.2"
+  },
+  "proxy" : null,
+  "shell_scripts" : {
+    "enabled" : true
+  },
+  "statistics" : {
+    "allow" : false
+  },
+  "update" : {
+    "filter" : {
+      "quality_filter" : {
+        "order_value" : 10000
+      }
+    }
+  },
+  "jetbrains_account" : {
+    "accounts" : [ ]
+  },
+  "projects" : { },
+  "signal" : "settingsChanged",
+  "ui" : {
+    "theme" : "dark"
+  }
+}

@@ -184,7 +184,7 @@ my:asdf-install-and-set-global-local() {
     my:echo-substep "Installing version $VERSION"
 
     # change to /tmp to avoid issues with plugins using current dir as temporary dir
-    (cd "$(mktemp)" && asdf install "$PLUGIN" "$VERSION")
+    (cd "$(mktemp -d)" && asdf install "$PLUGIN" "$VERSION")
     asdf global "$PLUGIN" "$VERSION"
 }
 
