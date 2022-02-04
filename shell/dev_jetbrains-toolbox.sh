@@ -11,18 +11,18 @@ if [ -d "$install_dir" ]; then
     exit 0
 fi
 
-my:step-begin "download toolbox"
+my:step-begin "download"
 curl -L 'https://data.services.jetbrains.com/products/download?platform=linux&code=TBA' -o "$installer_compressed_file"
 
 my:step-begin "extract installer"
 mkdir -p $installer_dir
 tar -xzf $installer_compressed_file -C $installer_dir --strip-components=1
 
-my:step-begin "config toolbox"
+my:step-begin "configure"
 mkdir -p "$install_dir"
 cp "$ASSETS_DIR/dev_jetbrains-toolbox--settings.json" "$install_dir/.settings.json"
 
-my:step-begin "install toolbox"
+my:step-begin "install"
 $installer_dir/jetbrains-toolbox
 
 my:wait-file "$install_dir/bin/jetbrains-toolbox"
