@@ -20,3 +20,4 @@ source "$(dirname "${BASH_SOURCE[0]}")/_base.sh"
 ./memory.sh
 ./network.sh
 ./systemd.sh
+./utility.sh
