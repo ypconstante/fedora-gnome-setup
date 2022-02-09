@@ -13,5 +13,5 @@ my:step-begin "enable podman with docker-compose"
 systemctl --user enable podman.socket
 
 my:step-begin "fish config"
-cp /usr/share/fish/vendor_completions.d/docker-compose.fish \
+my:link-file /usr/share/fish/vendor_completions.d/docker-compose.fish \
     "$HOME/projects/personal/fish-local/completions/docker-compose.fish"

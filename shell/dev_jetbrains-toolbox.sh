@@ -19,8 +19,7 @@ mkdir -p $installer_dir
 tar -xzf $installer_compressed_file -C $installer_dir --strip-components=1
 
 my:step-begin "configure"
-mkdir -p "$install_dir"
-cp "$ASSETS_DIR/dev_jetbrains-toolbox--settings.json" "$install_dir/.settings.json"
+my:copy-file "$ASSETS_DIR/dev_jetbrains-toolbox--settings.json" "$install_dir/.settings.json"
 
 my:step-begin "install"
 $installer_dir/jetbrains-toolbox
