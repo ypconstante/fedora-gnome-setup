@@ -1,0 +1,163 @@
+[org/gnome/desktop/interface]
+enable-animations=true
+enable-hot-corners=false
+font-antialiasing='grayscale'
+font-hinting='slight'
+gtk-enable-primary-paste=false
+show-battery-percentage=false
+
+[org/gnome/desktop/notifications]
+show-in-lock-screen=false
+
+[org/gnome/desktop/peripherals/keyboard]
+numlock-state=false
+
+[org/gnome/desktop/peripherals/touchpad]
+disable-while-typing=false
+two-finger-scrolling-enabled=true
+
+[org/gnome/desktop/privacy]
+disable-microphone=false
+old-files-age=uint32 14
+remember-recent-files=false
+remove-old-temp-files=true
+remove-old-trash-files=true
+
+[org/gnome/desktop/sound]
+allow-volume-above-100-percent=false
+
+[org/gnome/desktop/wm/keybindings]
+close=['<Super>q']
+cycle-group=@as []
+cycle-group-backward=@as []
+cycle-panels=@as []
+cycle-panels-backward=@as []
+minimize=['<Super>d']
+switch-input-source=@as []
+switch-input-source-backward=@as []
+switch-panels=@as []
+switch-panels-backward=@as []
+
+[org/gnome/desktop/wm/preferences]
+button-layout='appmenu:minimize,close'
+num-workspaces=3
+
+[org/gnome/mutter]
+dynamic-workspaces=false
+
+[org/gnome/settings-daemon/plugins/color]
+night-light-enabled=true
+
+[org/gnome/settings-daemon/plugins/media-keys]
+area-screenshot=@as []
+area-screenshot-clip=@as []
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/']
+magnifier=@as []
+magnifier-zoom-in=@as []
+magnifier-zoom-out=@as []
+screencast=['<Shift>Print']
+screenreader=@as []
+screenshot=@as []
+window-screenshot-clip=@as []
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
+binding='<Primary><Shift>Escape'
+command='gnome-system-monitor'
+name='System Monitor'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1]
+binding='<Primary>q'
+command='true'
+name='Disable ctrl+q'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2]
+binding='KP_Insert'
+command='true'
+name='Disable keypad zero as Insert key'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3]
+binding='Print'
+command='flameshot gui'
+name='Screenshot'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4]
+binding='<Super>t'
+command='gdbus call --session --dest org.gnome.Shell --object-path /com/github/ypconstante/setup --method com.github.ypconstante.setup.toggleGnomeTerminal'
+name='Terminal'
+
+[org/gnome/settings-daemon/plugins/power]
+sleep-inactive-ac-timeout=900
+sleep-inactive-ac-type='suspend'
+
+[org/gnome/shell]
+command-history=['lg']
+
+[org/gnome/shell/extensions/blur-my-shell]
+appfolder-dialog-opacity=0.12
+blur-panel=true
+brightness=0.59999999999999998
+dash-opacity=0.12
+debug=false
+hacks-level=1
+hidetopbar=true
+sigma=30
+static-blur=true
+
+[org/gnome/shell/extensions/dash-to-dock]
+apply-custom-theme=false
+autohide-in-fullscreen=false
+background-opacity=0.80000000000000004
+custom-theme-shrink=true
+dash-max-icon-size=48
+dock-position='BOTTOM'
+force-straight-corner=false
+height-fraction=0.90000000000000002
+hot-keys=false
+intellihide=true
+intellihide-mode='ALL_WINDOWS'
+isolate-workspaces=false
+multi-monitor=false
+pressure-threshold=50.0
+preview-size-scale=0.0
+require-pressure-to-show=true
+show-favorites=true
+show-running=true
+show-trash=false
+
+[org/gnome/shell/extensions/hidetopbar]
+enable-active-window=false
+enable-intellihide=true
+mouse-sensitive-fullscreen-window=false
+pressure-threshold=50
+show-in-overview=true
+
+[org/gnome/shell/extensions/improved-workspace-indicator]
+skip-taskbar-mode=true
+
+[org/gnome/shell/extensions/just-perfection]
+activities-button=false
+app-menu=true
+app-menu-icon=true
+clock-menu=true
+clock-menu-position=0
+keyboard-layout=true
+panel=true
+panel-notification-icon=true
+power-icon=true
+search=false
+show-apps-button=true
+startup-status=1
+window-picker-icon=true
+workspace=true
+workspace-switcher-size=10
+workspace-wrap-around=true
+
+[org/gnome/shell/extensions/sound-output-device-chooser]
+hide-menu-icons=true
+hide-on-single-device=false
+icon-theme='monochrome'
+integrate-with-slider=true
+new-profile-identification=true
+
+[org/gnome/tweaks]
+show-extensions-notice=false
