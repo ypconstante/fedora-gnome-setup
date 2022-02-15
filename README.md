@@ -24,6 +24,8 @@ Restart
 
 Restart
 
+Enable gnome extensions
+
 Configure git:
 - `git config --global user.email "you@example.com"`
 - `git config --global user.name "Your Name"`
