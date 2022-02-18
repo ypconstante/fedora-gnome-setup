@@ -1,0 +1,6 @@
+[org/gnome/nautilus/preferences]
+click-policy='single'
+show-directory-item-counts='never'
+
+[org/gtk/settings/file-chooser]
+sort-directories-first=true
