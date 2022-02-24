@@ -10,7 +10,7 @@ if [[ ! -d "$PROFILE_DIR" ]]; then
     exit 0
 fi
 
-if pgrep GeckoMain > /dev/null; then
+if pgrep firefox > /dev/null; then
     echo 'firefox is running, skipping'
     exit 0
 fi
