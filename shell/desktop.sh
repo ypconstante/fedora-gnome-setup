@@ -24,8 +24,7 @@ gnome-extensions install "$TMP_DIR/setup@ypconstante.github.com.shell-extension.
 my:step-begin "install extensions"
 install-extension "AlphabeticalAppGrid@stuarthayhurst"
 install-extension "blur-my-shell@aunetx"
-install-extension "dash-to-dock@micxgx.gmail.com"
-install-extension "hidetopbar@mathieu.bidon.ca"
+install-extension "dash-to-panel@jderose9.github.com"
 install-extension "just-perfection-desktop@just-perfection"
 install-extension "sound-output-device-chooser@kgshank.net"
 
