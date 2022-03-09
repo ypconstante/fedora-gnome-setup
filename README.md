@@ -62,7 +62,7 @@ Sign in or add license to:
 
 Configure Chromium and Chrome:
 - Change search engine to DDG
-- Enable Enhanced protection
+- Install [Chromium Web Store](https://github.com/NeverDecaf/chromium-web-store)
 - Install uBlock Origin
 
 [Install Nvidia drivers](https://rpmfusion.org/Howto/NVIDIA)
