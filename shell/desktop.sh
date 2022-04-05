@@ -20,11 +20,13 @@ my:step-begin "install custom extension"
 TMP_DIR=$(mktemp -d)
 gnome-extensions pack "$ASSETS_DIR/desktop--extension" -o "$TMP_DIR"
 gnome-extensions install "$TMP_DIR/setup@ypconstante.github.com.shell-extension.zip"
+gnome-extensions enable setup@ypconstante.github.com
 
 my:step-begin "install extensions"
 install-extension "AlphabeticalAppGrid@stuarthayhurst"
 install-extension "blur-my-shell@aunetx"
-install-extension "dash-to-panel@jderose9.github.com"
+install-extension "hidetopbar@mathieu.bidon.ca"
+install-extension "hotedge@jonathan.jdoda.ca"
 install-extension "just-perfection-desktop@just-perfection"
 install-extension "sound-output-device-chooser@kgshank.net"
 
