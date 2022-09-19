@@ -10,7 +10,6 @@ my:dnf-install \
     speedtest-cli \
     tealdeer \
     tokei \
-    toolbox \
     xclip
 
 my:step-begin "configure less"
