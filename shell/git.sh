@@ -9,8 +9,7 @@ my:step-begin "install git and git tools"
 my:dnf-install \
     git \
     git-delta \
-    meld \
-    tig
+    meld
 
 my:step-begin "configure git"
 my:create-file "$CONFIG_DIR/config"
@@ -25,7 +24,6 @@ cat "$ASSETS_DIR/git--ignore" >> "$GIT_IGNORE_FILE"
 
 my:step-begin "configure git tools"
 dconf load /org/gnome/meld/ < "$ASSETS_DIR/git--meld.dconf"
-mkdir -p "$XDG_DATA_HOME/tig"
 
 my:step-begin "add known ssh hosts"
 mkdir -p "$HOME/.ssh"
