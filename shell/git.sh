@@ -15,7 +15,6 @@ my:step-begin "configure git"
 my:create-file "$CONFIG_DIR/config"
 my:create-file "$CONFIG_DIR/credentials"
 git config --global include.path "$ASSETS_DIR/git--config"
-git config --global commit.template "$ASSETS_DIR/git--commit-template"
 
 my:step-begin "create gitignore"
 curl -sS https://www.toptal.com/developers/gitignore/api/dotenv,git,linux,jetbrains+all,sublimetext -o "$GIT_IGNORE_FILE"
