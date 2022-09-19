@@ -37,11 +37,6 @@ export NODE_REPL_HISTORY="$XDG_STATE_HOME/node_repl_history"
 export NPM_CONFIG_CACHE=$XDG_LIB_HOME/npm
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 
-# Python
-export PIP_REQUIRE_VIRTUALENV=true
-export AUTOSWITCH_VIRTUAL_ENV_DIR=".local/venv"
-export IPYTHONDIR="$XDG_STATE_HOME/ipython"
-
 # Fix applications to respect XDG
 export CUDA_CACHE_PATH="$XDG_CACHE_HOME/cuda-nv"
 export DVDCSS_CACHE="$XDG_DATA_HOME/dvdcss"
