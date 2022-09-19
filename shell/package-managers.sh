@@ -12,6 +12,4 @@ my:step-begin "add rpm fusion"
 my:dnf-install \
     "https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-${RELEASE_NUMBER}.noarch.rpm" \
     "https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-${RELEASE_NUMBER}.noarch.rpm"
-
-my:step-begin "enable rpm fusion appstream metadata"
 sudo dnf -y groupupdate core
