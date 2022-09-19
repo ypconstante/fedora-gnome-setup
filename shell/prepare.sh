@@ -12,11 +12,6 @@ my:dnf-remove \
 sudo dnf autoremove -y -q
 sudo flatpak uninstall -y --unused
 
-my:step-begin "update firmwares"
-sudo fwupdmgr refresh --force -y
-sudo fwupdmgr get-devices -y
-sudo fwupdmgr update -y
-
 my:step-begin "create common folders"
 mkdir -p "$HOME/.local/bin/"
 mkdir -p "$XDG_DATA_HOME/applications"
