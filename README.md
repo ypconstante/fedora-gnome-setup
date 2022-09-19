@@ -49,13 +49,6 @@ Configure JetBrains Toolbox:
 - Install IntelliJ
 - Install IntelliJ plugins
 
-Configure Spotify
-- Sign in
-- Download liked songs
-- In 'Settings > Display Options', disable notifications and what friends are playing
-- In 'Settings > Playback', disable smooth transition
-- In 'Settings > Privacy', disable cookies
-
 Sign in or add license to:
 - Sublime Merge
 - Sublime Text
