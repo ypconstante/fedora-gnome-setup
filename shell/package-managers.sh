@@ -4,6 +4,7 @@ source "$(dirname "${BASH_SOURCE[0]}")/_base.sh"
 
 my:step-begin "setup flatpak"
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+sudo flatpak remote-modify flathub --enable
 
 my:step-begin "setup dnf"
 my:append-to-file-if-not-contains /etc/dnf/dnf.conf 'max_parallel_downloads=10'
