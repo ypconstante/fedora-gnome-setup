@@ -8,7 +8,8 @@ my:dnf-remove \
     libreoffice* \
     rhythmbox \
     simple-scan \
-    sane-airscan
+    sane-airscan \
+    yelp
 sudo dnf autoremove -y -q
 sudo flatpak uninstall -y --unused
 
