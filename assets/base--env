@@ -40,4 +40,4 @@ export WGETRC="$XDG_CONFIG_HOME/wgetrc"
 
 # Path
 export DEFAULT_PATH="$PATH"
-export PATH="$ASDF_PATHS:$DEFAULT_PATH:$HOME/.local/bin:$ANDROID_PATHS"
+export PATH="$ASDF_PATHS:$DEFAULT_PATH:$HOME/.local/bin"
