@@ -7,7 +7,6 @@ sudo ./fedora-gnome-setup-main/shell/install.sh
 
 Restart
 
-Install updates
 
 ```sh
 sudo dnf install -y git
@@ -15,6 +14,8 @@ git clone https://github.com/ypconstante/fedora-gnome-setup.git ~/projects/perso
 find ~/projects/personal/fedora-gnome-setup/. -name "*.sh" -exec chmod +x {} \;
 ./projects/personal/fedora-gnome-setup/shell/run-after-install.sh
 ```
+
+Install updates
 
 Restart
 
