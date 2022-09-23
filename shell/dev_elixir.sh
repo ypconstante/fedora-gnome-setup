@@ -15,8 +15,8 @@ my:dnf-install \
 
 my:step-begin "install erlang"
 my:asdf-add-plugin erlang
-my:asdf-install-and-set-global erlang latest:24
+my:asdf-install-and-set-global erlang latest:25
 
 my:step-begin "install elixir"
 my:asdf-add-plugin elixir
-my:asdf-install-and-set-global elixir "$(asdf list-all elixir 1.12 | grep otp-24 | grep -v rc | tail -1)"
+my:asdf-install-and-set-global elixir "$(asdf list-all elixir 1.14 | grep otp-25 | grep -v rc | tail -1)"
