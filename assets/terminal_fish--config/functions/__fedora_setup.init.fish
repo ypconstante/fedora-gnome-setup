@@ -2,7 +2,7 @@ function __fedora_setup.init
     function __fedora_setup.aliases
         abbr -aU -- - 'cd -'
 
-        alias -s copy="xclip -selection clipboard"
+        alias -s copy="wl-copy"
 
         # git
         abbr -aU g- 'git switch -'

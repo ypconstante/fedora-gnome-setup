@@ -10,7 +10,7 @@ my:dnf-install \
     speedtest-cli \
     tealdeer \
     tokei \
-    xclip
+    wl-clipboard
 
 my:step-begin "configure less"
 rm -f "$HOME/.lesshst"
