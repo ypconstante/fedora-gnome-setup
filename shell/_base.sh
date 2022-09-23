@@ -84,7 +84,7 @@ my:link-file() {
 
     my:create-parent-dirs "$TO"
 
-    ln -f "$FROM" "$TO" \
+    ln -f "$FROM" "$TO" 2> /dev/null \
         || cp "$FROM" "$TO" 2> /dev/null \
         || cp "$FROM" "$TO"
 }
