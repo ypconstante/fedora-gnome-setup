@@ -6,7 +6,7 @@ my:step-begin "configure grub"
 sudo grub2-editenv /boot/efi/EFI/fedora/grubenv create
 my:copy-file "$ASSETS_DIR/boot--grub-config.sh" /etc/grub.d/98-fedora-setup
 sudo chmod +x /etc/grub.d/98-fedora-setup
-my:my:append-to-file-if-not-contains /etc/default/grub 'GRUB_CMDLINE_LINUX_DEFAULT="fbcon=nodefer nowatchdog nmi_watchdog=0"'
+my:append-to-file-if-not-contains /etc/default/grub 'GRUB_CMDLINE_LINUX_DEFAULT="fbcon=nodefer nowatchdog nmi_watchdog=0"'
 sudo grub2-mkconfig -o /boot/efi/EFI/fedora/grub.cfg
 
 my:step-begin "disable watchdog"
