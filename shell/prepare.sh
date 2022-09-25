@@ -4,6 +4,7 @@ source "$(dirname "${BASH_SOURCE[0]}")/_base.sh"
 
 my:step-begin "remove unused packages"
 my:dnf-remove \
+    gnome-photos \
     gnome-tour \
     libreoffice* \
     rhythmbox \
