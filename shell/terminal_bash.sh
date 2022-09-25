@@ -13,11 +13,6 @@ rm -f \
 
 my:step-begin "move bashrc.d folder"
 sed -Ei "s|~/.bashrc.d|$XDG_CONFIG_HOME/bashrc.d|" "$HOME/.bashrc"
-mkdir -p "$XDG_CONFIG_HOME/bashrc.d"
-
-my:step-begin "add starship initialization"
-echo "if [ ! -f /usr/bin/starship ]; then return 0; fi" > "$XDG_CONFIG_HOME/bashrc.d/starship.sh"
-starship init bash --print-full-init >> "$XDG_CONFIG_HOME/bashrc.d/starship.sh"
 
 my:step-begin "source .profile"
 echo "source $HOME/.profile" > "$XDG_CONFIG_HOME/bashrc.d/profile.sh"

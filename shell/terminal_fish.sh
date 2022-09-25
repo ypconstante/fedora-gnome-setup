@@ -8,9 +8,6 @@ mkdir -p "$XDG_CONFIG_HOME/fish/completions"
 
 if fish -c "! functions --query fisher"; then
     my:step-begin "install fisher"
-    mkdir -p "$HOME/projects/personal/fish-local/conf.d"
-    mkdir -p "$HOME/projects/personal/fish-local/completions"
-    mkdir -p "$HOME/projects/personal/fish-local/functions"
 
     fish -c "curl -sSL https://git.io/fisher | source && fisher install jorgebucaran/fisher"
 fi
@@ -25,6 +22,3 @@ fish -c "fisher update"
 my:step-begin "configure plugins"
 # remove deleted folders from j
 fish -c "j --clean"
-
-my:step-begin "add starship initialization"
-starship init fish --print-full-init > "$HOME/projects/personal/fish-local/conf.d/starship.fish"

@@ -6,3 +6,7 @@ my:step-begin "install"
 sudo dnf copr enable -y atim/starship
 my:dnf-install starship
 my:link-file "$ASSETS_DIR/terminal_starship.toml" "$XDG_CONFIG_HOME/starship.toml"
+
+my:step-begin "add shell setup"
+starship init bash --print-full-init > "$XDG_CONFIG_HOME/bashrc.d/starship.sh"
+starship init fish --print-full-init > "$HOME/projects/personal/fish-local/conf.d/starship.fish"
