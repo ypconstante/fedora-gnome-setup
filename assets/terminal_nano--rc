@@ -22,9 +22,6 @@ set regexp
 # Better home key when line starts with space
 set smarthome
 
-# Allow nano to be suspended with ^Z
-set suspend
-
 set tabsize 4
 set tabstospaces
 
