@@ -15,3 +15,17 @@ install-extension() {
 
 my:step-begin "install extension manager"
 my:flatpak-install com.mattjakeman.ExtensionManager
+
+my:step-begin "install extensions"
+install-extension "AlphabeticalAppGrid@stuarthayhurst"
+install-extension "blur-my-shell@aunetx"
+install-extension "hidetopbar@mathieu.bidon.ca"
+install-extension "hotedge@jonathan.jdoda.ca"
+install-extension "just-perfection-desktop@just-perfection"
+
+my:step-begin "disable default extensions"
+gnome-extensions disable background-logo@fedorahosted.org
+
+my:step-begin "load config"
+dconf load / < "$ASSETS_DIR/desktop--config.dconf"
+
