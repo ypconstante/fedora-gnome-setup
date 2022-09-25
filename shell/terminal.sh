@@ -8,4 +8,5 @@ mkdir -p "$HOME/projects/personal/fish-local/conf.d"
 mkdir -p "$HOME/projects/personal/fish-local/completions"
 mkdir -p "$HOME/projects/personal/fish-local/functions"
 
-find . -name "terminal_*.sh" -print0 | my:run-files
+find . -name "terminal_*.sh"  -not -name 'terminal_fish.sh' -print0 | my:run-files
+./terminal_fish.sh
