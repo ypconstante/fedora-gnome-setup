@@ -23,6 +23,9 @@ workspaces-only-on-primary=false
 [org/gnome/settings-daemon/plugins/power]
 sleep-inactive-ac-type='suspend'
 
+[/org/gnome/shell]
+favorite-apps=['firefox.desktop', 'org.gnome.Terminal.desktop', 'org.gnome.Nautilus.desktop']
+
 [org/gnome/shell/extensions/blur-my-shell]
 brightness=0.20000000000000001
 color-and-noise=true
