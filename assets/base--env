@@ -38,5 +38,4 @@ export SPACEMACSDIR="$XDG_CONFIG_HOME/spacemacs"
 export WGETRC="$XDG_CONFIG_HOME/wgetrc"
 
 # Path
-export DEFAULT_PATH="$PATH"
-export PATH="$DEFAULT_PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.local/bin"
