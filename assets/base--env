@@ -16,7 +16,6 @@ export XDG_LIB_HOME="$HOME/.local/lib"
 export ASDF_DIR="$XDG_DATA_HOME/asdf"
 export ASDF_CONFIG_FILE="$XDG_CONFIG_HOME/asdf"
 export ASDF_DATA_DIR="$XDG_LIB_HOME/asdf"
-export ASDF_PATHS="$ASDF_DATA_DIR/shims:$XDG_DATA_HOME/asdf/bin"
 
 # Podman / Docker
 export DOCKER_HOST="unix:///run/user/$UID/podman/podman.sock"
@@ -40,4 +39,4 @@ export WGETRC="$XDG_CONFIG_HOME/wgetrc"
 
 # Path
 export DEFAULT_PATH="$PATH"
-export PATH="$ASDF_PATHS:$DEFAULT_PATH:$HOME/.local/bin"
+export PATH="$DEFAULT_PATH:$HOME/.local/bin"
