@@ -2,9 +2,6 @@
 
 source "$(dirname "${BASH_SOURCE[0]}")/_base.sh"
 
-my:step-begin "disable network auto mount"
-sudo sed -Ei 's/AutoMount=true/AutoMount=false/' /usr/share/gvfs/mounts/network.mount
-
 my:step-begin "file system kernel parameters"
 my:copy-file "$ASSETS_DIR/file-system--kernel-parameters.conf" /etc/sysctl.d/98-file-system.conf
 sudo chmod 644 /etc/sysctl.d/98-file-system.conf
