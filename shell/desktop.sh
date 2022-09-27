@@ -16,6 +16,9 @@ install-extension() {
 my:step-begin "install extension manager"
 my:flatpak-install com.mattjakeman.ExtensionManager
 
+my:step-begin "install gnome tweaks"
+my:dnf-install gnome-tweaks
+
 my:step-begin "install extensions"
 install-extension "AlphabeticalAppGrid@stuarthayhurst"
 install-extension "blur-my-shell@aunetx"
