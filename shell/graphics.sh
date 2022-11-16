@@ -17,6 +17,8 @@ my:dnf-install \
     libva \
     libva-vdpau-driver \
     libva-utils \
+    mesa-va-drivers-freeworld \
+    mesa-vdpau-drivers-freeworld \
     vdpauinfo
 
 my:step-begin "install gpu viewer"
