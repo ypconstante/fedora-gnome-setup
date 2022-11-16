@@ -14,6 +14,7 @@ my:dnf-install \
 my:step-begin "enable vaapi"
 my:dnf-install \
     ffmpeg \
+    gstreamer1-vaapi \
     libva \
     libva-vdpau-driver \
     libva-utils \
