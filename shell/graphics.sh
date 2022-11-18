@@ -18,9 +18,10 @@ my:dnf-install \
     libva \
     libva-vdpau-driver \
     libva-utils \
-    mesa-va-drivers-freeworld \
-    mesa-vdpau-drivers-freeworld \
     vdpauinfo
+
+sudo dnf swap -y -q mesa-va-drivers mesa-va-drivers-freeworld
+sudo dnf swap -y -q mesa-vdpau-drivers mesa-vdpau-drivers-freeworld
 
 my:step-begin "install gpu viewer"
 my:flatpak-install io.github.arunsivaramanneo.GPUViewer
