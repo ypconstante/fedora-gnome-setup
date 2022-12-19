@@ -1234,11 +1234,9 @@ user_pref("browser.newtabpage.enabled", true); // 0104
 user_pref("browser.newtab.preload", true); // 0104
 user_pref("keyword.enabled", true); // 0801
 user_pref("layout.css.visited_links_enabled", false); // 0810
-user_pref("browser.sessionstore.interval", 120000); // 1004
 user_pref("browser.shell.shortcutFavicons", true); // 1006
 user_pref("media.autoplay.default", 1); // 2030
 user_pref("browser.pagethumbnails.capturing_disabled", false); // 2604
-user_pref("devtools.chrome.enabled", true); // 2607
 user_pref("devtools.debugger.remote-enabled", true); // 2608
 user_pref("dom.webnotifications.enabled", false); // 7018
 user_pref("dom.webnotifications.serviceworker.enabled", false); // 7018
@@ -1313,7 +1311,6 @@ user_pref("browser.urlbar.ctrlCanonizesURLs", false);
 user_pref("extensions.pocket.enabled", false);
 
 // customize new tab page
-user_pref("browser.newtabpage.activity-stream.showSearch", false);
 user_pref("browser.newtabpage.activity-stream.topSitesRows", 2);
 user_pref("browser.newtabpage.activity-stream.section.topstories.showDisclaimer", false);
 user_pref("browser.newtabpage.activity-stream.feeds.section.highlights", false);
@@ -1332,8 +1329,8 @@ user_pref("mousewheel.with_control.action", 1);
 // disable media keys integration
 user_pref("media.hardwaremediakeys.enabled", false);
 
-// disable picture-in-picture toggle
-user_pref("media.videocontrols.picture-in-picture.video-toggle.enabled", false);
+// set the minimum interval between session save operations
+user_pref("browser.sessionstore.interval", 120000);
 
 // reset options
 
