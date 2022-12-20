@@ -25,6 +25,10 @@ button-layout='appmenu:maximize,close'
 [org/gnome/desktop/search-providers]
 disabled=['org.gnome.Software.desktop', 'firefox.desktop']
 
+[org/gnome/desktop/wm/keybindings]
+close=['<Super>q']
+minimize=['<Super>d']
+
 [org/gnome/mutter]
 center-new-windows=true
 workspaces-only-on-primary=false
