@@ -20,7 +20,6 @@ my:step-begin "install gnome tweaks"
 my:dnf-install gnome-tweaks
 
 my:step-begin "install extensions"
-install-extension "AlphabeticalAppGrid@stuarthayhurst"
 install-extension "blur-my-shell@aunetx"
 install-extension "hidetopbar@mathieu.bidon.ca"
 install-extension "hotedge@jonathan.jdoda.ca"
