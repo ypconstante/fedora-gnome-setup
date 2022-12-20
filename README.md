@@ -1,14 +1,4 @@
 ```sh
-curl -L 'https://github.com/ypconstante/fedora-gnome-setup/archive/refs/heads/main.zip' -o 'fedora-gnome-setup.zip'
-unzip 'fedora-gnome-setup.zip'
-find fedora-gnome-setup-main/. -name "*.sh" -exec chmod +x {} \;
-sudo ./fedora-gnome-setup-main/shell/install.sh
-```
-
-Restart
-
-
-```sh
 sudo dnf install -y git
 git clone https://github.com/ypconstante/fedora-gnome-setup.git ~/projects/personal/fedora-gnome-setup
 find ~/projects/personal/fedora-gnome-setup/. -name "*.sh" -exec chmod +x {} \;
@@ -24,8 +14,6 @@ Restart
 ```
 
 Restart
-
-Enable gnome extensions
 
 Configure git:
 - `git config --global user.email "you@example.com"`
