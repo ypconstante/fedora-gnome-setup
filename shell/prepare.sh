@@ -6,6 +6,7 @@ my:step-begin "remove unused packages"
 my:dnf-remove \
     gnome-photos \
     gnome-tour \
+    ibus-typing-booster \
     libreoffice* \
     rhythmbox \
     simple-scan \
