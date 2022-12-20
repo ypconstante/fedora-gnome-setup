@@ -50,16 +50,8 @@ sigma=10
 [org/gnome/shell/extensions/blur-my-shell/applications]
 blur=false
 
-[org/gnome/shell/extensions/blur-my-shell/hidetopbar]
-compatibility=true
-
 [org/gnome/shell/extensions/blur-my-shell/panel]
 blur=true
-
-[org/gnome/shell/extensions/hidetopbar]
-enable-active-window=false
-mouse-sensitive=true
-mouse-sensitive-fullscreen-window=false
 
 [org/gnome/shell/extensions/hotedge]
 fallback-in-use=false

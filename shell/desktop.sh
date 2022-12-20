@@ -21,7 +21,6 @@ my:dnf-install gnome-tweaks
 
 my:step-begin "install extensions"
 install-extension "blur-my-shell@aunetx"
-install-extension "hidetopbar@mathieu.bidon.ca"
 install-extension "hotedge@jonathan.jdoda.ca"
 install-extension "just-perfection-desktop@just-perfection"
 
