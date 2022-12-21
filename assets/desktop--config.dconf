@@ -53,10 +53,5 @@ blur=false
 [org/gnome/shell/extensions/blur-my-shell/panel]
 blur=true
 
-[org/gnome/shell/extensions/just-perfection]
-workspace-wrap-around=true
-window-demands-attention-focus=true
-search=false
-
 [org/gnome/system/location]
 enabled=false
