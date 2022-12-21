@@ -3,7 +3,6 @@
 source "$(dirname "${BASH_SOURCE[0]}")/_base.sh"
 
 my:step-begin "configure grub"
-sudo grubby --update-kernel=ALL --args="fbcon=nodefer"
 sudo grubby --update-kernel=ALL --args="nowatchdog"
 sudo grubby --update-kernel=ALL --args="nmi_watchdog=0"
 
