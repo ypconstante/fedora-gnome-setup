@@ -19,9 +19,6 @@ my:flatpak-install com.mattjakeman.ExtensionManager
 my:step-begin "install gnome tweaks"
 my:dnf-install gnome-tweaks
 
-my:step-begin "install extensions"
-install-extension "blur-my-shell@aunetx"
-
 my:step-begin "disable default extensions"
 gnome-extensions disable background-logo@fedorahosted.org
 
