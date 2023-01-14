@@ -1321,9 +1321,6 @@ user_pref("gfx.webrender.all", true);
 // disable zoom on ctrl+scroll
 user_pref("mousewheel.with_control.action", 1);
 
-// disable media keys integration
-user_pref("media.hardwaremediakeys.enabled", false);
-
 // set the minimum interval between session save operations
 user_pref("browser.sessionstore.interval", 120000);
 
