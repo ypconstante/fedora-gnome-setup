@@ -4,6 +4,11 @@
     visibility: collapse !important;
 }
 
+/* hide extensions button  */
+#unified-extensions-button {
+    display: none !important;
+}
+
 /* remove url bar background */
 #urlbar[breakout] {
     --autocomplete-popup-highlight-background:  var(--lwt-toolbar-field-focus);
