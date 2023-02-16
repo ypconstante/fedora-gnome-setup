@@ -1,4 +1,6 @@
 function network-info 
+    argparse speedtest -- $argv
+
     set log_file /tmp/network-info
 
 
@@ -40,9 +42,11 @@ function network-info
     _echo_title_no_lf "public ip"
     curl -4 -s icanhazip.com || curl -6 icanhazip.com
 
-    echo ""
-    _echo_title "speed test"
-    speedtest-cli --secure --simple
+    if set -q _flag_speedtest
+        echo ""
+        _echo_title "speed test"
+        speedtest-cli --secure --simple
+    end
 
     true
 end
