@@ -19,6 +19,10 @@ my:flatpak-install com.mattjakeman.ExtensionManager
 my:step-begin "install gnome tweaks"
 my:dnf-install gnome-tweaks
 
+my:step-begin "install extensions"
+install-extension "PrivacyMenu@stuarthayhurst"
+install-extension "quick-settings-tweaks@qwreey"
+
 my:step-begin "disable default extensions"
 gnome-extensions disable background-logo@fedorahosted.org
 
