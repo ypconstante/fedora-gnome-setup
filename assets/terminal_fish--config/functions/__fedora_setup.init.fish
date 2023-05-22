@@ -1,12 +1,10 @@
 function __fedora_setup.init
     function __fedora_setup.aliases
-        abbr -aU -- - 'cd -'
-
         alias -s copy="wl-copy"
 
         # git
-        abbr -aU g- 'git switch -'
-        abbr -aU gcls git clone --depth 1 --shallow-submodules
+        abbr -ag g- 'git switch -'
+        abbr -ag gcls git clone --depth 1 --shallow-submodules
     end
 
     function __fedora_setup.theme

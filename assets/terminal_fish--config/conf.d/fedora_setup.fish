@@ -8,3 +8,5 @@ end
 
 function __fedora_setup_uninstall --on-event fedora_setup_uninstall
 end
+
+abbr -a -- - 'cd -'
