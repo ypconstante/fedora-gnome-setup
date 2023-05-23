@@ -3,4 +3,4 @@
 source "$(dirname "${BASH_SOURCE[0]}")/_base.sh"
 
 my:step-begin "install"
-my:flatpak-install com.github.tchx84.Flatseal
+my:dnf-install flatseal
