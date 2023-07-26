@@ -36,6 +36,7 @@ minimize=['<Super>d']
 
 [org/gnome/mutter]
 center-new-windows=true
+check-alive-timeout=15000
 workspaces-only-on-primary=false
 
 [org/gnome/settings-daemon/plugins/power]
