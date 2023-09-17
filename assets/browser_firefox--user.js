@@ -1,7 +1,7 @@
 /******
 *    name: arkenfox user.js
-*    date: 26 July 2023
-* version: 115
+*    date: 17 September 2023
+* version: 117
 *     url: https://github.com/arkenfox/user.js
 * license: MIT: https://github.com/arkenfox/user.js/blob/master/LICENSE.txt
 
@@ -18,7 +18,6 @@
        * Some site breakage and unintended consequences will happen. Everyone's experience will differ
          e.g. some user data is erased on exit (section 2800), change this to suit your needs
        * While not 100% definitive, search for "[SETUP" tags
-         e.g. third party images/videos not loading on some sites? check 1601
   5. Some tag info
        [SETUP-SECURITY] it's one item, read it
             [SETUP-WEB] can cause some websites to break
@@ -34,6 +33,8 @@
     - If you are not using arkenfox v102-1... (not a definitive list)
       - 2815: clearOnShutdown cookies + offlineApps should be false
       - 9999: switch the appropriate deprecated section(s) back on
+  * ESR115
+    - use https://github.com/arkenfox/user.js/releases/tag/115.1
 
 * INDEX:
 
@@ -42,13 +43,13 @@
   0300: QUIETER FOX
   0400: SAFE BROWSING
   0600: BLOCK IMPLICIT OUTBOUND
-  0700: DNS / DoH / PROXY / SOCKS / IPv6
+  0700: DNS / DoH / PROXY / SOCKS
   0800: LOCATION BAR / SEARCH BAR / SUGGESTIONS / HISTORY / FORMS
   0900: PASSWORDS
   1000: DISK AVOIDANCE
   1200: HTTPS (SSL/TLS / OCSP / CERTS / HPKP)
   1400: FONTS
-  1600: HEADERS / REFERERS
+  1600: REFERERS
   1700: CONTAINERS
   2000: PLUGINS / MEDIA / WEBRTC
   2400: DOM (DOCUMENT OBJECT MODEL)
@@ -255,20 +256,8 @@ user_pref("browser.places.speculativeConnect.enabled", false);
  * [1] https://www.bleepingcomputer.com/news/software/major-browsers-to-prevent-disabling-of-click-tracking-privacy-risk/ ***/
    // user_pref("browser.send_pings", false); // [DEFAULT: false]
 
-/*** [SECTION 0700]: DNS / DoH / PROXY / SOCKS / IPv6 ***/
+/*** [SECTION 0700]: DNS / DoH / PROXY / SOCKS ***/
 user_pref("_user.js.parrot", "0700 syntax error: the parrot's given up the ghost!");
-/* 0701: disable IPv6
- * IPv6 can be abused, especially with MAC addresses, and can leak with VPNs: assuming
- * your ISP and/or router and/or website is IPv6 capable. Most sites will fall back to IPv4
- * [SETUP-WEB] PR_CONNECT_RESET_ERROR: this pref *might* be the cause
- * [STATS] Firefox telemetry (Feb 2023) shows ~9% of successful connections are IPv6
- * [NOTE] This is an application level fallback. Disabling IPv6 is best done at an
- * OS/network level, and/or configured properly in VPN setups. If you are not masking your IP,
- * then this won't make much difference. If you are masking your IP, then it can only help.
- * [NOTE] PHP defaults to IPv6 with "localhost". Use "php -S 127.0.0.1:PORT"
- * [TEST] https://ipleak.org/
- * [1] https://www.internetsociety.org/tag/ipv6-security/ (Myths 2,4,5,6) ***/
-user_pref("network.dns.disableIPv6", true);
 /* 0702: set the proxy server to do any DNS lookups when using SOCKS
  * e.g. in Tor, this stops your local DNS server from knowing your Tor destination
  * as a remote Tor node will handle the DNS request
@@ -296,25 +285,26 @@ user_pref("network.gio.supported-protocols", ""); // [HIDDEN PREF]
  * [SETUP-CHROME] If you use a proxy and you understand the security impact
  * [1] https://bugzilla.mozilla.org/buglist.cgi?bug_id=1732792,1733994,1733481 ***/
    // user_pref("network.proxy.allow_bypass", false);
-/* 0710: disable DNS-over-HTTPS (DoH) rollout [FF60+]
- * 0=default, 2=increased (TRR (Trusted Recursive Resolver) first), 3=max (TRR only), 5=off
+/* 0710: enable DNS-over-HTTPS (DoH) [FF60+]
+ * 0=default, 2=increased (TRR (Trusted Recursive Resolver) first), 3=max (TRR only), 5=off (no rollout)
  * see "doh-rollout.home-region": USA 2019, Canada 2021, Russia/Ukraine 2022 [3]
  * [SETTING] Privacy & Security>DNS over HTTPS
  * [1] https://hacks.mozilla.org/2018/05/a-cartoon-intro-to-dns-over-https/
  * [2] https://wiki.mozilla.org/Security/DOH-resolver-policy
  * [3] https://support.mozilla.org/en-US/kb/firefox-dns-over-https
  * [4] https://www.eff.org/deeplinks/2020/12/dns-doh-and-odoh-oh-my-year-review-2020 ***/
-   // user_pref("network.trr.mode", 5);
+   // user_pref("network.trr.mode", 3);
+/* 0711: disable skipping DoH when parental controls are enabled [FF70+] ***/
+user_pref("network.dns.skipTRR-when-parental-control-enabled", false);
+/* 0712: set DoH provider
+ * The custom uri is the value shown when you "Choose provider>Custom>"
+ * [NOTE] If you USE custom then "network.trr.uri" should be set the same
+ * [SETTING] Privacy & Security>DNS over HTTPS>Increased/Max>Choose provider ***/
+   // user_pref("network.trr.uri", "https://example.dns");
+   // user_pref("network.trr.custom_uri", "https://example.dns");
 
 /*** [SECTION 0800]: LOCATION BAR / SEARCH BAR / SUGGESTIONS / HISTORY / FORMS ***/
 user_pref("_user.js.parrot", "0800 syntax error: the parrot's ceased to be!");
-/* 0801: disable location bar using search
- * Don't leak URL typos to a search engine, give an error message instead
- * Examples: "secretplace,com", "secretplace/com", "secretplace com", "secret place.com"
- * [NOTE] This does not affect explicit user action such as using search buttons in the
- * dropdown, or using keyword search shortcuts you configure in options (e.g. "d" for DuckDuckGo)
- * [SETUP-CHROME] Override this if you trust and use a privacy respecting search engine ***/
-user_pref("keyword.enabled", false);
 /* 0802: disable location bar domain guessing
  * domain guessing intercepts DNS "hostname not found errors" and resends a
  * request (e.g. by adding www or .com). This is inconsistent use (e.g. FQDNs), does not work
@@ -463,12 +453,6 @@ user_pref("security.OCSP.enabled", 1); // [DEFAULT: 1]
 user_pref("security.OCSP.require", true);
 
 /** CERTS / HPKP (HTTP Public Key Pinning) ***/
-/* 1221: disable Windows 8.1's Microsoft Family Safety cert [FF50+] [WINDOWS]
- * 0=disable detecting Family Safety mode and importing the root
- * 1=only attempt to detect Family Safety mode (don't import the root)
- * 2=detect Family Safety mode and import the root
- * [1] https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/21686 ***/
-user_pref("security.family_safety.mode", 0);
 /* 1223: enable strict PKP (Public Key Pinning)
  * 0=disabled, 1=allow user MiTM (default; such as your antivirus), 2=strict
  * [SETUP-WEB] MOZILLA_PKIX_ERROR_KEY_PINNING_FAILURE ***/
@@ -519,7 +503,7 @@ user_pref("browser.xul.error_pages.expert_bad_cert", true);
 user_pref("_user.js.parrot", "1400 syntax error: the parrot's bereft of life!");
 /* 1402: limit font visibility (Windows, Mac, some Linux) [FF94+]
  * Uses hardcoded lists with two parts: kBaseFonts + kLangPackFonts [1], bundled fonts are auto-allowed
- * In normal windows: uses the first applicable: RFP (4506) over TP over Standard
+ * In normal windows: uses the first applicable: RFP over TP over Standard
  * In Private Browsing windows: uses the most restrictive between normal and private
  * 1=only base system fonts, 2=also fonts from optional language packs, 3=also user-installed fonts
  * [1] https://searchfox.org/mozilla-central/search?path=StandardFonts*.inc ***/
@@ -527,18 +511,13 @@ user_pref("_user.js.parrot", "1400 syntax error: the parrot's bereft of life!");
    // user_pref("layout.css.font-visibility.standard", 1);
    // user_pref("layout.css.font-visibility.trackingprotection", 1);
 
-/*** [SECTION 1600]: HEADERS / REFERERS
+/*** [SECTION 1600]: REFERERS
                   full URI: https://example.com:8888/foo/bar.html?id=1234
      scheme+host+port+path: https://example.com:8888/foo/bar.html
           scheme+host+port: https://example.com:8888
    [1] https://feeding.cloud.geek.nz/posts/tweaking-referrer-for-privacy-in-firefox/
 ***/
 user_pref("_user.js.parrot", "1600 syntax error: the parrot rests in peace!");
-/* 1601: control when to send a cross-origin referer
- * 0=always (default), 1=only if base domains match, 2=only if hosts match
- * [SETUP-WEB] Breakage: older modems/routers and some sites e.g banks, vimeo, icloud, instagram
- * If "2" is too strict, then override to "0" and use Smart Referer extension (Strict mode + add exceptions) ***/
-user_pref("network.http.referer.XOriginPolicy", 2);
 /* 1602: control the amount of cross-origin information to send [FF52+]
  * 0=send full URI (default), 1=scheme+host+port+path, 2=scheme+host+port ***/
 user_pref("network.http.referer.XOriginTrimmingPolicy", 2);
@@ -571,17 +550,6 @@ user_pref("media.peerconnection.ice.default_address_only", true);
 /* 2020: disable GMP (Gecko Media Plugins)
  * [1] https://wiki.mozilla.org/GeckoMediaPlugins ***/
    // user_pref("media.gmp-provider.enabled", false);
-/* 2021: disable widevine CDM (Content Decryption Module)
- * [NOTE] This is covered by the EME master switch (2022) ***/
-   // user_pref("media.gmp-widevinecdm.enabled", false);
-/* 2022: disable all DRM content (EME: Encryption Media Extension)
- * Optionally hide the setting which also disables the DRM prompt
- * [SETUP-WEB] e.g. Netflix, Amazon Prime, Hulu, HBO, Disney+, Showtime, Starz, DirectTV
- * [SETTING] General>DRM Content>Play DRM-controlled content
- * [TEST] https://bitmovin.com/demos/drm
- * [1] https://www.eff.org/deeplinks/2017/10/drms-dead-canary-how-we-just-lost-web-what-we-learned-it-and-what-we-need-do-next ***/
-user_pref("media.eme.enabled", false);
-   // user_pref("browser.eme.ui.enabled", false);
 
 /*** [SECTION 2400]: DOM (DOCUMENT OBJECT MODEL) ***/
 user_pref("_user.js.parrot", "2400 syntax error: the parrot's kicked the bucket!");
@@ -631,8 +599,6 @@ user_pref("network.IDN_show_punycode", true);
  * [1] https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=pdf.js+firefox ***/
 user_pref("pdfjs.disabled", false); // [DEFAULT: false]
 user_pref("pdfjs.enableScripting", false); // [FF86+]
-/* 2621: disable links launching Windows Store on Windows 8/8.1/10 [WINDOWS] ***/
-user_pref("network.protocol-handler.external.ms-windows-store", false);
 /* 2623: disable permissions delegation [FF73+]
  * Currently applies to cross-origin geolocation, camera, mic and screen-sharing
  * permissions, and fullscreen requests. Disabling delegation means any prompts
@@ -807,7 +773,7 @@ user_pref("privacy.sanitize.timeSpan", 0);
 ***/
 user_pref("_user.js.parrot", "4500 syntax error: the parrot's popped 'is clogs");
 /* 4501: enable privacy.resistFingerprinting
- * [SETUP-WEB] RFP can cause some website breakage: mainly canvas, use a site exception via the urlbar
+ * [SETUP-WEB] RFP can cause some website breakage: mainly canvas, use a canvas site exception via the urlbar
  * RFP also has a few side effects: mainly timezone is UTC0, and websites will prefer light theme
  * [NOTE] pbmode applies if true and the original pref is false
  * [1] https://bugzilla.mozilla.org/418986 ***/
@@ -837,8 +803,6 @@ user_pref("privacy.resistFingerprinting.letterboxing", true); // [HIDDEN PREF]
  * [WARNING] DO NOT USE unless testing, see [1] comment 12
  * [1] https://bugzilla.mozilla.org/1635603 ***/
    // user_pref("privacy.resistFingerprinting.exemptedDomains", "*.example.invalid");
-/* 4506: set RFP's font visibility level (1402) [FF94+] ***/
-   // user_pref("layout.css.font-visibility.resistFingerprinting", 1); // [DEFAULT: 1]
 /* 4510: disable using system colors
  * [SETTING] General>Language and Appearance>Fonts and Colors>Colors>Use system colors ***/
 user_pref("browser.display.use_system_colors", false); // [DEFAULT: false NON-WINDOWS]
@@ -933,8 +897,8 @@ user_pref("_user.js.parrot", "5000 syntax error: the parrot's taken 'is last bow
 /* 5015: disable Windows taskbar preview [WINDOWS] ***/
    // user_pref("browser.taskbar.previews.enable", false); // [DEFAULT: false]
 /* 5016: discourage downloading to desktop
- * 0=desktop, 1=downloads (default), 2=last used
- * [SETTING] To set your default "downloads": General>Downloads>Save files to ***/
+ * 0=desktop, 1=downloads (default), 2=custom
+ * [SETTING] To set your custom default "downloads": General>Downloads>Save files to ***/
    // user_pref("browser.download.folderList", 2);
 /* 5017: disable Form Autofill
  * If .supportedCountries includes your region (browser.search.region) and .supported
@@ -949,6 +913,12 @@ user_pref("_user.js.parrot", "5000 syntax error: the parrot's taken 'is last bow
    // user_pref("browser.pagethumbnails.capturing_disabled", true); // [HIDDEN PREF]
 /* 5020: disable Windows native notifications and use app notications instead [FF111+] [WINDOWS] ***/
    // user_pref("alerts.useSystemBackend.windows.notificationserver.enabled", false);
+/* 5021: disable location bar using search
+ * Don't leak URL typos to a search engine, give an error message instead
+ * Examples: "secretplace,com", "secretplace/com", "secretplace com", "secret place.com"
+ * [NOTE] This does not affect explicit user action such as using search buttons in the
+ * dropdown, or using keyword search shortcuts you configure in options (e.g. "d" for DuckDuckGo) ***/
+   // user_pref("keyword.enabled", false);
 
 /*** [SECTION 5500]: OPTIONAL HARDENING
    Not recommended. Overriding these can cause breakage and performance issues,
@@ -989,6 +959,30 @@ user_pref("_user.js.parrot", "5500 syntax error: this is an ex-parrot!");
    // user_pref("javascript.options.wasm", false);
 /* 5507: disable rendering of SVG OpenType fonts ***/
    // user_pref("gfx.font_rendering.opentype_svg.enabled", false);
+/* 5508: disable all DRM content (EME: Encryption Media Extension)
+ * Optionally hide the UI setting which also disables the DRM prompt
+ * [SETTING] General>DRM Content>Play DRM-controlled content
+ * [TEST] https://bitmovin.com/demos/drm
+ * [1] https://www.eff.org/deeplinks/2017/10/drms-dead-canary-how-we-just-lost-web-what-we-learned-it-and-what-we-need-do-next ***/
+   // user_pref("media.eme.enabled", false);
+   // user_pref("browser.eme.ui.enabled", false);
+/* 5509: disable IPv6 if using a VPN
+ * This is an application level fallback. Disabling IPv6 is best done at an OS/network
+ * level, and/or configured properly in system wide VPN setups.
+ * [SETUP-WEB] PR_CONNECT_RESET_ERROR
+ * [NOTE] PHP defaults to IPv6 with "localhost". Use "php -S 127.0.0.1:PORT"
+ * [TEST] https://ipleak.org/
+ * [1] https://www.internetsociety.org/tag/ipv6-security/ (Myths 2,4,5,6) ***/
+   // user_pref("network.dns.disableIPv6", true);
+/* 5510: control when to send a cross-origin referer
+ * 0=always (default), 1=only if base domains match, 2=only if hosts match
+ * [NOTE] Will cause breakage: older modems/routers and some sites e.g banks, vimeo, icloud, instagram ***/
+   // user_pref("network.http.referer.XOriginPolicy", 2);
+/* 5511: set DoH bootstrap address [FF89+]
+ * Firefox uses the system DNS to initially resolve the IP address of your DoH server.
+ * When set to a valid, working value that matches your "network.trr.uri" (0712) Firefox
+ * won't use the system DNS. If the IP doesn't match then DoH won't work ***/
+   // user_pref("network.trr.bootstrapAddr", "10.0.0.1") // [HIDDEN PREF]
 
 /*** [SECTION 6000]: DON'T TOUCH ***/
 user_pref("_user.js.parrot", "6000 syntax error: the parrot's 'istory!");
@@ -1037,6 +1031,8 @@ user_pref("extensions.quarantinedDomains.enabled", true); // [DEFAULT: true]
    // user_pref("extensions.formautofill.creditCards.available", "");
    // user_pref("extensions.formautofill.creditCards.supported", "");
    // user_pref("middlemouse.contentLoadURL", "");
+/* 6051: prefsCleaner: reset previously active items removed from arkenfox FF115+ ***/
+   // user_pref("network.protocol-handler.external.ms-windows-store", "");
 
 /*** [SECTION 7000]: DON'T BOTHER ***/
 user_pref("_user.js.parrot", "7000 syntax error: the parrot's pushing up daisies!");
@@ -1082,7 +1078,7 @@ user_pref("_user.js.parrot", "7000 syntax error: the parrot's pushing up daisies
    // user_pref("dom.securecontext.allowlist_onions", true); // [FF97+] 1382359/1744006
    // user_pref("network.http.referer.hideOnionSource", true); // 1305144
 /* 7007: referers
- * [WHY] Only cross-origin referers (1600s) need control ***/
+ * [WHY] Only cross-origin referers (1602, 5510) matter ***/
    // user_pref("network.http.sendRefererHeader", 2);
    // user_pref("network.http.referer.trimmingPolicy", 0);
 /* 7008: set the default Referrer Policy [FF59+]
@@ -1127,11 +1123,10 @@ user_pref("_user.js.parrot", "7000 syntax error: the parrot's pushing up daisies
 /* 7017: disable service workers
  * [WHY] Already isolated with TCP (2701) behind a pref (2710) ***/
    // user_pref("dom.serviceWorkers.enabled", false);
-/* 7018: disable Web Notifications
+/* 7018: disable Web Notifications [FF22+]
  * [WHY] Web Notifications are behind a prompt (7002)
  * [1] https://blog.mozilla.org/en/products/firefox/block-notification-requests/ ***/
-   // user_pref("dom.webnotifications.enabled", false); // [FF22+]
-   // user_pref("dom.webnotifications.serviceworker.enabled", false); // [FF44+]
+   // user_pref("dom.webnotifications.enabled", false);
 /* 7019: disable Push Notifications [FF44+]
  * [WHY] Push requires subscription
  * [NOTE] To remove all subscriptions, reset "dom.push.userAgentID"
@@ -1223,15 +1218,29 @@ user_pref("network.cookie.lifetimePolicy", 2);
    // user_pref("browser.cache.offline.enable", false);
 // ***/
 
+/* ESR115.x still uses all the following prefs
+// [NOTE] replace the * with a slash in the line above to re-enable active ones
+// FF116
+// 4506: set RFP's font visibility level (1402) [FF94+]
+   // [-] https://bugzilla.mozilla.org/1838415
+   // user_pref("layout.css.font-visibility.resistFingerprinting", 1); // [DEFAULT: 1]
+// FF117
+// 1221: disable Windows Microsoft Family Safety cert [FF50+] [WINDOWS]
+   // 0=disable detecting Family Safety mode and importing the root
+   // 1=only attempt to detect Family Safety mode (don't import the root)
+   // 2=detect Family Safety mode and import the root
+   // [1] https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/21686
+   // [-] https://bugzilla.mozilla.org/1844908
+user_pref("security.family_safety.mode", 0);
+// 7018: disable service worker Web Notifications [FF44+]
+   // [WHY] Web Notifications are behind a prompt (7002)
+   // [1] https://blog.mozilla.org/en/products/firefox/block-notification-requests/
+   // [-] https://bugzilla.mozilla.org/1842457
+   // user_pref("dom.webnotifications.serviceworker.enabled", false);
+// ***/
+
 /* END: internal custom pref to test for syntax errors ***/
 user_pref("_user.js.parrot", "SUCCESS: No no he's not dead, he's, he's restin'!");
-
-// OVERRIDES
-user_pref("_user.js.parrot", "overrides section syntax error");
-
-/* recipes - https://github.com/arkenfox/user.js/issues/1080 */
-/* override recipe: enable DRM and let me watch videos ***/
-user_pref("media.eme.enabled", true); // 2022
 
 /* override recipe: enable session restore ***/
 user_pref("browser.startup.page", 3); // 0102
@@ -1242,7 +1251,6 @@ user_pref("privacy.cpd.history", false); // 2812
 user_pref("browser.startup.homepage", "about:newtab"); // 0103
 user_pref("browser.newtabpage.enabled", true); // 0104
 user_pref("browser.newtab.preload", true); // 0104
-user_pref("keyword.enabled", true); // 0801
 user_pref("layout.css.visited_links_enabled", false); // 0810
 user_pref("browser.shell.shortcutFavicons", true); // 1006
 user_pref("media.autoplay.default", 1); // 2030
