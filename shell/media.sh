@@ -6,4 +6,4 @@ my:step-begin "install celluloid"
 my:dnf-install celluloid --setopt=install_weak_deps=False
 
 my:step-begin "remove gnome videos"
- my:dnf-remove totem
+my:dnf-remove totem
