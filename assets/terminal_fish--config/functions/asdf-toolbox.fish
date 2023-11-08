@@ -1,5 +1,5 @@
 function asdf-toolbox
-    set SCRIPT "source ~/.profile; asdf $argv"
+    set SCRIPT "source $ASDF_DIR/asdf.sh; asdf $argv"
 
     toolbox run -c "$TOOLBOX_CONTAINER" bash -c "$SCRIPT"
 
