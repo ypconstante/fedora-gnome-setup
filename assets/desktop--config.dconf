@@ -17,7 +17,6 @@ show-in-lock-screen=false
 disable-while-typing=false
 tap-to-click=true
 
-
 [org/gnome/desktop/privacy]
 old-files-age=uint32 14
 remember-recent-files=false
@@ -28,7 +27,7 @@ remove-old-temp-files=true
 button-layout='appmenu:maximize,close'
 
 [org/gnome/desktop/search-providers]
-disabled=['org.gnome.Software.desktop', 'firefox.desktop']
+disabled=['org.gnome.Software.desktop', 'firefox.desktop', 'org.gnome.Terminal.desktop', 'org.gnome.Boxes.desktop', 'org.gnome.Contacts.desktop']
 
 [org/gnome/desktop/wm/keybindings]
 close=['<Super>q']
