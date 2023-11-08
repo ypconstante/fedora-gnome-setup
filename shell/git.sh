@@ -27,7 +27,4 @@ dconf load /org/gnome/meld/ < "$ASSETS_DIR/git--meld.dconf"
 my:step-begin "add known ssh hosts"
 mkdir -p "$HOME/.ssh"
 chmod 0755 "$HOME/.ssh"
-for host in 'bitbucket.org' 'github.com' 'gitlab.com'; do
-    ssh-keygen -R $host 1> /dev/null
-    ssh-keyscan -t rsa $host >> "$HOME/.ssh/known_hosts"
-done
+my:link-file "$ASSETS_DIR/git--hosts" "$HOME/.ssh/known_hosts"
