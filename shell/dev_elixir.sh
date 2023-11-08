@@ -6,12 +6,12 @@ my:step-begin "install dependencies"
 my:toolbox-dnf-install \
     ncurses-devel \
     openssl-devel \
-    wxGTK3-devel
+    wxGTK-devel
 
 my:dnf-install \
-    wxGTK3 \
-    wxGTK3-gl \
-    wxGTK3-webview
+    wxGTK \
+    wxGTK-gl \
+    wxGTK-webview
 
 my:step-begin "install erlang"
 my:asdf-add-plugin erlang
