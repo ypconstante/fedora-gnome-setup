@@ -2,5 +2,5 @@
 click-policy='single'
 show-directory-item-counts='never'
 
-[org/gtk/settings/file-chooser]
+[org/gtk/gtk4/settings/file-chooser]
 sort-directories-first=true
