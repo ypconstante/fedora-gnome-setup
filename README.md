@@ -51,5 +51,7 @@ Configure Chromium and Chrome:
 
 Configure backup on Vorta
 
+Configure NewsFlash
+
 Optional - Gaming:
 - Run `~/projects/personal/fedora-gnome-setup/shell/gaming.sh`
