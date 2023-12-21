@@ -1,6 +1,8 @@
 # custom
-.venv
+.idea
 .local
 .npmrc
 .tool-versions
+*.trace
 TODO.md
+.venv

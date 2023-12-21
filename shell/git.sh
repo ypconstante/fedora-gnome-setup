@@ -17,7 +17,7 @@ my:create-file "$CONFIG_DIR/credentials"
 git config --global include.path "$ASSETS_DIR/git--config"
 
 my:step-begin "create gitignore"
-curl -sS https://www.toptal.com/developers/gitignore/api/dotenv,git,linux,mac,jetbrains+all,sublimetext -o "$GIT_IGNORE_FILE"
+curl -sS https://www.toptal.com/developers/gitignore/api/dotenv,git,linux,mac,jetbrains+iml,sublimetext,elixir,erlang -o "$GIT_IGNORE_FILE"
 echo -e "\n" >> "$GIT_IGNORE_FILE"
 cat "$ASSETS_DIR/git--ignore" >> "$GIT_IGNORE_FILE"
 
