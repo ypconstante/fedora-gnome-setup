@@ -12,6 +12,7 @@ my:dnf-remove \
     rhythmbox \
     simple-scan \
     sane-airscan \
+    w3m \
     yelp
 sudo dnf autoremove -y -q
 sudo flatpak uninstall -y --unused
