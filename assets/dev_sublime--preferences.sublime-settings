@@ -6,4 +6,5 @@
         "Vintage",
     ],
     "theme": "Default Dark.sublime-theme",
+    "index_files": true,
 }
