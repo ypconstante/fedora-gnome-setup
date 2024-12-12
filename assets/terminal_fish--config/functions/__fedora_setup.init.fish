@@ -10,6 +10,9 @@ function __fedora_setup.init
     function __fedora_setup.theme
         set -U fish_greeting
 
+        # hydro config
+        set -U fish_prompt_pwd_dir_length 30
+
         # colors from darcula and monokai
         set -l foreground f8f8f2
         set -l selection 44475a
