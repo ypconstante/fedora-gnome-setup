@@ -1,6 +1,6 @@
 /*********************************** Toolbar **********************************/
 /* hide tabs  */
-#titlebar {
+#TabsToolbar {
     visibility: collapse !important;
 }
 
