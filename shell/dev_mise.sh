@@ -21,6 +21,7 @@ mise trust "$XDG_CONFIG_HOME/mise.toml"
 
 my:step-begin "fish config"
 mise activate fish > "$HOME/projects/personal/fish-local/conf.d/mise.fish"
+mise completion fish > "$HOME/projects/personal/fish-local/completions/mise.fish"
 
 my:step-begin "install tools"
 mise install
