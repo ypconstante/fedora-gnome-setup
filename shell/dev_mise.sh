@@ -8,6 +8,7 @@ my:dnf-install mise
 
 my:step-begin "config"
 my:link-file "$ASSETS_DIR/dev_mise.toml" "$XDG_CONFIG_HOME/mise.toml"
+mise trust "$XDG_CONFIG_HOME/mise.toml"
 
 my:step-begin "fish config"
 mise activate fish > "$HOME/projects/personal/fish-local/conf.d/mise.fish"
