@@ -6,6 +6,9 @@ my:step-begin "install"
 sudo dnf config-manager addrepo --from-repofile=https://mise.jdx.dev/rpm/mise.repo --overwrite
 my:dnf-install mise
 
+my:step-begin "update plugins"
+mise plugins update
+
 my:step-begin "install erlang dependencies"
 my:dnf-install \
     autoconf \
