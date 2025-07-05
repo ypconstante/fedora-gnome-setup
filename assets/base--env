@@ -33,4 +33,4 @@ export SPACEMACSDIR="$XDG_CONFIG_HOME/spacemacs"
 export WGETRC="$XDG_CONFIG_HOME/wgetrc"
 
 # Path
-export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.local/bin:$HOME/.local/share/mise/shims"
