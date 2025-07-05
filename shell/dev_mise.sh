@@ -6,6 +6,12 @@ my:step-begin "install"
 sudo dnf config-manager addrepo --from-repofile=https://mise.jdx.dev/rpm/mise.repo --overwrite
 my:dnf-install mise
 
+my:step-begin "install erlang dependencies"
+my:dnf-install \
+    autoconf \
+    automake \
+    ncurses-devel
+
 my:step-begin "config"
 my:link-file "$ASSETS_DIR/dev_mise.toml" "$XDG_CONFIG_HOME/mise.toml"
 mise trust "$XDG_CONFIG_HOME/mise.toml"
