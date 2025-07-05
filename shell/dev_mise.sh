@@ -16,7 +16,7 @@ my:dnf-install \
     ncurses-devel
 
 my:step-begin "config"
-my:link-file "$ASSETS_DIR/dev_mise.toml" "$XDG_CONFIG_HOME/mise.toml"
+my:link-file "$ASSETS_DIR/dev_mise.toml" "$XDG_CONFIG_HOME/mise/config.toml"
 mise trust "$XDG_CONFIG_HOME/mise.toml"
 
 my:step-begin "fish config"
