@@ -6,6 +6,6 @@ my:step-begin "update current repo"
 git pull
 
 ./prepare.sh
-./dev_asdf.sh
+./dev_mise.sh
 ./terminal_fish.sh
 ./toolbox_update.sh

@@ -158,36 +158,6 @@ my:flatpak-install() {
     echo ''
 }
 
-# my:asdf
-my:asdf-add-plugin() {
-    local PLUGIN="$1"
-
-    source "$ASDF_DIR/asdf.sh"
-
-    asdf plugin-add "$PLUGIN"
-    asdf list-all "$PLUGIN" 1> /dev/null
-}
-
-my:asdf-install-and-set-global() {
-    local PLUGIN="$1"
-    local VERSION="$2"
-
-    my:toolbox-run my:asdf-install-and-set-global-local "$PLUGIN" "$VERSION"
-}
-
-my:asdf-install-and-set-global-local() {
-    local PLUGIN="$1"
-    local VERSION="$2"
-
-    source "$ASDF_DIR/asdf.sh"
-
-    my:echo-substep "Installing version $VERSION"
-
-    # change to /tmp to avoid issues with plugins using current dir as temporary dir
-    (cd "$(mktemp -d)" && asdf install "$PLUGIN" "$VERSION")
-    asdf global "$PLUGIN" "$VERSION"
-}
-
 # my:git
 my:git-clone() {
     local REPOSITORY="$1"

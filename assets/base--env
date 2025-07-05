@@ -12,11 +12,6 @@ export XDG_STATE_HOME="$HOME/.local/state"
 # Non standard
 export XDG_LIB_HOME="$HOME/.local/lib"
 
-# ASDF
-export ASDF_DIR="$XDG_DATA_HOME/asdf"
-export ASDF_CONFIG_FILE="$XDG_CONFIG_HOME/asdf"
-export ASDF_DATA_DIR="$XDG_LIB_HOME/asdf"
-
 # Podman / Docker
 export DOCKER_HOST="unix:///run/user/$UID/podman/podman.sock"
 
