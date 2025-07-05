@@ -8,4 +8,3 @@ git pull
 ./prepare.sh
 ./dev_mise.sh
 ./terminal_fish.sh
-./toolbox_update.sh

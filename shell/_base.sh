@@ -16,13 +16,8 @@ fi
 
 sudo true || exit
 
-if [ "${#BASH_SOURCE[@]}" == 1 ]; then
-    # _base not called by another script, for example my:toolbox-run
-    CURRENT_SCRIPT=""
-else
-    CURRENT_SCRIPT_PATH=$(realpath "${BASH_SOURCE[1]}")
-    CURRENT_SCRIPT=$(basename "$CURRENT_SCRIPT_PATH")
-fi
+CURRENT_SCRIPT_PATH=$(realpath "${BASH_SOURCE[1]}")
+CURRENT_SCRIPT=$(basename "$CURRENT_SCRIPT_PATH")
 
 BASE_FILE_PATH=$(realpath "${BASH_SOURCE[0]}")
 SCRIPTS_DIR=$(dirname "$BASE_FILE_PATH")
@@ -180,18 +175,6 @@ my:git-clone() {
     else
         git clone "$REPOSITORY" "$DIRECTORY"
     fi
-}
-
-################################### TOOLBOX ####################################
-
-my:toolbox-run() {
-    local SCRIPT="source '$SCRIPTS_DIR/_base.sh';${*@Q};"
-
-    toolbox run bash -c "$SCRIPT"
-}
-
-my:toolbox-dnf-install() {
-    my:toolbox-run my:dnf-install "$@"
 }
 
 #################################### PRINT #####################################
