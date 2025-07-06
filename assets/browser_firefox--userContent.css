@@ -7,22 +7,9 @@ body * {
         background-color:  #2B2A33 !important;
     }
 
-    .top-site-outer .tile {
-        box-shadow: none !important;
-    }
-
-    .top-site-outer .title .icon {
+    .top-site-outer .title .icon,
+    .logo-and-wordmark-wrapper {
         display: none !important;
-    }
-
-    .top-site-outer .tile .icon-wrapper {
-        width: 80px !important;
-        height: 80px !important;
-    }
-
-    .top-site-outer .tile,
-    .top-site-outer .top-site-icon {
-        background-color: unset !important;
     }
 }
 
