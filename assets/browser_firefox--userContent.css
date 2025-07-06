@@ -7,6 +7,20 @@ body * {
         background-color:  #2B2A33 !important;
     }
 
+    .shortcuts-refresh .top-sites-list:not(.dnd-active) .top-site-outer .tile {
+        background-color: color-mix(in srgb, var(--button-text-color-hover) 14%, transparent) !important;
+        box-shadow: none !important;
+    }
+
+    .shortcuts-refresh .top-sites-list:not(.dnd-active) .top-site-outer:is(.active, :focus, :hover) .tile {
+        background: none !important;
+    }
+
+    .top-site-outer .tile .icon-wrapper {
+        width: 48px !important;
+        height: 48px !important;
+    }
+
     .top-site-outer .title .icon,
     .logo-and-wordmark-wrapper {
         display: none !important;
