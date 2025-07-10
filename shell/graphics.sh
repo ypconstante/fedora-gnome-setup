@@ -43,7 +43,8 @@ if [ -n "$NVIDIA_GPUS" ]; then
         xorg-x11-drv-nvidia-libs \
         xorg-x11-drv-nvidia-libs.i686 \
         xorg-x11-drv-nvidia-power \
-        nv-codec-headers
+        nv-codec-headers \
+        nvidia-vaapi-driver
     sudo systemctl enable nvidia-hibernate
     sudo systemctl enable nvidia-resume
     sudo systemctl enable nvidia-suspend
