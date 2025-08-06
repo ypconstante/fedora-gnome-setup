@@ -22,7 +22,9 @@ my:step-begin "rpmfusion multimedia setup"
 sudo dnf swap --allowerasing -y -q ffmpeg-free ffmpeg
 sudo dnf update @multimedia --setopt="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin -y -q
 sudo dnf swap -y -q mesa-va-drivers mesa-va-drivers-freeworld
+sudo dnf swap -y -q mesa-va-drivers.i686 mesa-va-drivers-freeworld.i686
 sudo dnf swap -y -q mesa-vdpau-drivers mesa-vdpau-drivers-freeworld
+sudo dnf swap -y -q mesa-vdpau-drivers.i686 mesa-vdpau-drivers-freeworld.i686
 
 my:step-begin "install gpu viewer"
 my:flatpak-install io.github.arunsivaramanneo.GPUViewer
