@@ -2,8 +2,11 @@
 
 source "$(dirname "${BASH_SOURCE[0]}")/_base.sh"
 
+# https://idroot.us/install-mesa-drivers-fedora-42/
 my:step-begin "install vulkan"
 my:dnf-install \
+    mesa-libGL \
+    mesa-libGL.i686 \
     mesa-vulkan-drivers \
     mesa-vulkan-drivers.i686 \
     vulkan-loader \
