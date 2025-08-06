@@ -2,6 +2,7 @@
 
 source "$(dirname "${BASH_SOURCE[0]}")/_base.sh"
 
+# https://rpmfusion.org/Howto/Multimedia
 my:step-begin "install vulkan"
 my:dnf-install \
     mesa-vulkan-drivers \
@@ -12,16 +13,18 @@ my:dnf-install \
     vulkan-tools
 
 my:step-begin "enable vaapi"
+
+sudo dnf swap --allowerasing -y -q ffmpeg-free ffmpeg
+sudo dnf swap -y -q mesa-va-drivers mesa-va-drivers-freeworld
+sudo dnf swap -y -q mesa-vdpau-drivers mesa-vdpau-drivers-freeworld
+
 my:dnf-install \
-    ffmpeg \
     gstreamer1-vaapi \
     libva \
-    libva-vdpau-driver \
     libva-utils \
     vdpauinfo
 
-sudo dnf swap -y -q mesa-va-drivers mesa-va-drivers-freeworld
-sudo dnf swap -y -q mesa-vdpau-drivers mesa-vdpau-drivers-freeworld
+sudo dnf update @multimedia --setopt="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin -y -q
 
 my:step-begin "install gpu viewer"
 my:flatpak-install io.github.arunsivaramanneo.GPUViewer
@@ -44,7 +47,8 @@ if [ -n "$NVIDIA_GPUS" ]; then
         xorg-x11-drv-nvidia-libs.i686 \
         xorg-x11-drv-nvidia-power \
         nv-codec-headers \
-        nvidia-vaapi-driver
+        nvidia-vaapi-driver \
+        libva-nvidia-driver
     sudo systemctl enable nvidia-hibernate
     sudo systemctl enable nvidia-resume
     sudo systemctl enable nvidia-suspend
