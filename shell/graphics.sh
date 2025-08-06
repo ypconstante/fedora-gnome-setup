@@ -6,7 +6,6 @@ my:step-begin "install vulkan"
 my:dnf-install \
     mesa-vulkan-drivers \
     mesa-vulkan-drivers.i686 \
-    vulkan \
     vulkan-loader \
     vulkan-loader.i686 \
     vulkan-tools
