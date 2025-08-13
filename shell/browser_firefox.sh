@@ -10,11 +10,6 @@ if [[ ! -d "$PROFILE_DIR" ]]; then
     exit 0
 fi
 
-if pgrep firefox > /dev/null; then
-    echo 'firefox is running, skipping'
-    exit 0
-fi
-
 my:step-begin "configure"
 my:link-file "$ASSETS_DIR/browser_firefox--search.json.mozlz4" "$PROFILE_DIR/search.json.mozlz4"
 my:link-file "$ASSETS_DIR/browser_firefox--user.js" "$PROFILE_DIR/user.js"

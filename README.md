@@ -15,6 +15,8 @@ Install updates
 
 Restart
 
+Close Firefox
+
 ```sh
 ./projects/personal/fedora-gnome-setup/shell/run.sh
 ```
