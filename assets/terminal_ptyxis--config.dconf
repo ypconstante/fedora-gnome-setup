@@ -1,0 +1,9 @@
+[/]
+audible-bell=false
+default-profile-uuid='39d05c395b026791d90f9e0166ab9aa3'
+enable-a11y=false
+profile-uuids=['39d05c395b026791d90f9e0166ab9aa3']
+visual-bell=false
+
+[Profiles/39d05c395b026791d90f9e0166ab9aa3]
+palette='gnome'
