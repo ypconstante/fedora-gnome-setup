@@ -13,6 +13,7 @@ my:step-begin "install erlang dependencies"
 my:dnf-install \
     autoconf \
     automake \
+    gcc \
     ncurses-devel
 
 my:step-begin "config"
