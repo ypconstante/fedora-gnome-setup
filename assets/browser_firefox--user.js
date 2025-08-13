@@ -1322,6 +1322,9 @@ user_pref("browser.newtabpage.activity-stream.migrationExpired", true);
 // allow titlebar to be hidden via css
 user_pref("browser.tabs.drawInTitlebar", true);
 
+// disable native sidebar
+user_pref("sidebar.revamp", false)
+
 // theme
 user_pref("extensions.activeThemeID", "firefox-compact-dark@mozilla.org");
 user_pref("devtools.theme", "dark");
