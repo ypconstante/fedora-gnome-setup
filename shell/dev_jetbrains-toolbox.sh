@@ -3,10 +3,11 @@
 source "$(dirname "${BASH_SOURCE[0]}")/_base.sh"
 
 install_dir=$XDG_DATA_HOME/JetBrains/Toolbox
+install_bin_file="$install_dir/bin/jetbrains-toolbox"
 installer_compressed_file=/tmp/jetbrains-toolbox.tar.gz
 installer_dir=/tmp/jetbrains-toolbox
 
-if [ -d "$install_dir" ]; then
+if [ -f "$install_bin_file" ]; then
     echo 'toolbox already installed, skipping'
     exit 0
 fi
@@ -22,9 +23,9 @@ my:step-begin "configure"
 my:copy-file "$ASSETS_DIR/dev_jetbrains-toolbox--settings.json" "$install_dir/.settings.json"
 
 my:step-begin "install"
-$installer_dir/jetbrains-toolbox
+$installer_dir/bin/jetbrains-toolbox
 
-my:wait-file "$install_dir/bin/jetbrains-toolbox"
+my:wait-file "$install_bin_file"
 sleep 10
 
 pkill jetbrains-toolb
