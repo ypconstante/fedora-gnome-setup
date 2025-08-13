@@ -1,3 +1,9 @@
+Before format:
+- Backup
+- Export Firefox cookie exceptions
+- Export Firefox extensions config
+- Export Newsflash config
+
 ```sh
 sudo dnf install -y git
 git clone https://github.com/ypconstante/fedora-gnome-setup.git ~/projects/personal/fedora-gnome-setup
