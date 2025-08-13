@@ -44,6 +44,9 @@ sleep-inactive-ac-type='suspend'
 [org/gnome/shell]
 favorite-apps=['firefox.desktop', 'org.gnome.Terminal.desktop', 'org.gnome.Nautilus.desktop']
 
+[org/gnome/shell/extensions/privacy-menu]
+click-to-toggle=true
+
 [org/gnome/shell/extensions/quick-settings-tweaks]
 datemenu-remove-notifications=false
 notifications-enabled=false
