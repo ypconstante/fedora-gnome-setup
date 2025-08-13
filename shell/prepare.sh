@@ -17,13 +17,6 @@ my:dnf-remove \
 sudo dnf autoremove -y -q
 sudo flatpak uninstall -y --unused
 
-FLATPAK_LATEST_NVIDIA=$(flatpak list | grep "GL.nvidia" | cut -f2 | cut -d '.' -f5)
-flatpak list | \
-    grep org.freedesktop.Platform.GL32.nvidia- | \
-    cut -f2 | \
-    grep -v "$FLATPAK_LATEST_NVIDIA" | \
-    xargs --no-run-if-empty -o sudo flatpak uninstall -y
-
 my:step-begin "create common folders"
 mkdir -p "$HOME/.local/bin/"
 mkdir -p "$XDG_DATA_HOME/applications"
