@@ -3,7 +3,7 @@
 source "$(dirname "${BASH_SOURCE[0]}")/_base.sh"
 
 my:step-begin "install"
-sudo dnf config-manager addrepo --from-repofile=https://mise.jdx.dev/rpm/mise.repo --overwrite
+my:dnf-add-repo https://mise.jdx.dev/rpm/mise.repo
 my:dnf-install mise
 
 my:step-begin "update plugins"

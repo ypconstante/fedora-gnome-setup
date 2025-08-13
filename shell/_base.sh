@@ -139,7 +139,7 @@ my:dnf-add-key() {
 my:dnf-add-repo() {
     local URL="$1"
 
-    sudo dnf config-manager --add-repo "$URL"
+    sudo dnf config-manager addrepo --from-repofile="$URL" --overwrite
 }
 
 my:dnf-remove() {
