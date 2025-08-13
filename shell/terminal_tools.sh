@@ -4,9 +4,9 @@ source "$(dirname "${BASH_SOURCE[0]}")/_base.sh"
 
 my:step-begin "install cli tools"
 my:dnf-install \
+    fastfetch \
     inotify-tools \
     jq \
-    neofetch \
     speedtest-cli \
     tealdeer \
     tokei \
