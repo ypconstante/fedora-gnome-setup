@@ -6,4 +6,6 @@ profile-uuids=['39d05c395b026791d90f9e0166ab9aa3']
 visual-bell=false
 
 [Profiles/39d05c395b026791d90f9e0166ab9aa3]
+custom-command='fish'
 palette='gnome'
+use-custom-command=true
