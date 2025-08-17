@@ -7,4 +7,5 @@ my:copy-file "$ASSETS_DIR/memory--kernel-parameters.conf" /etc/sysctl.d/98-memor
 sudo chmod 644 /etc/sysctl.d/98-memory.conf
 
 my:step-begin "disable systemd-oomd"
-sudo systemctl disable --now systemd-oomd.service systemd-oomd.socket
+sudo systemctl mask --now systemd-oomd.socket
+sudo systemctl disable --now systemd-oomd.service
