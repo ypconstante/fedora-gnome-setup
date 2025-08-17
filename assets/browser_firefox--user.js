@@ -1336,7 +1336,7 @@ user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 user_pref("browser.uidensity", 1);
 user_pref(
     "browser.uiCustomization.state",
-    '{"placements":{"widget-overflow-fixed-list":[],"nav-bar":["back-button","forward-button","stop-reload-button","customizableui-special-spring1","urlbar-container","customizableui-special-spring2","ublock0_raymondhill_net-browser-action","firemonkey_eros_man-browser-action","_d634138d-c276-4fc8-924b-40a0ea21d284_-browser-action","downloads-button","fxa-toolbar-menu-button"],"toolbar-menubar":["menubar-items"],"TabsToolbar":["tabbrowser-tabs","new-tab-button","alltabs-button"],"PersonalToolbar":["personal-bookmarks"]},"seen":["_testpilot-containers-browser-action","ublock0_raymondhill_net-browser-action","_3c078156-979c-498b-8990-85f7987dd929_-browser-action","_7a7a4a92-a2a0-41d1-9fd7-1e92480d612d_-browser-action","_aecec67f-0d10-4fa7-b7c7-609a2db280cf_-browser-action","_d634138d-c276-4fc8-924b-40a0ea21d284_-browser-action","developer-button","firemonkey_eros_man-browser-action","skipredirect_sblask-browser-action","7esoorv3_alefvanoon_anonaddy_me-browser-action"],"dirtyAreaCache":["nav-bar","toolbar-menubar","TabsToolbar","PersonalToolbar","widget-overflow-fixed-list"],"currentVersion":17,"newElementCount":9}'
+    '{"placements":{"widget-overflow-fixed-list":[],"unified-extensions-area":[],"nav-bar":["back-button","forward-button","stop-reload-button","vertical-spacer","customizableui-special-spring1","urlbar-container","customizableui-special-spring2","ublock0_raymondhill_net-browser-action","firemonkey_eros_man-browser-action","_d634138d-c276-4fc8-924b-40a0ea21d284_-browser-action","downloads-button","fxa-toolbar-menu-button","reset-pbm-toolbar-button","unified-extensions-button"],"toolbar-menubar":["menubar-items"],"TabsToolbar":["firefox-view-button","tabbrowser-tabs","new-tab-button","alltabs-button"],"vertical-tabs":[],"PersonalToolbar":["personal-bookmarks"]},"seen":["_testpilot-containers-browser-action","ublock0_raymondhill_net-browser-action","_3c078156-979c-498b-8990-85f7987dd929_-browser-action","_7a7a4a92-a2a0-41d1-9fd7-1e92480d612d_-browser-action","_aecec67f-0d10-4fa7-b7c7-609a2db280cf_-browser-action","_d634138d-c276-4fc8-924b-40a0ea21d284_-browser-action","developer-button","firemonkey_eros_man-browser-action","skipredirect_sblask-browser-action","7esoorv3_alefvanoon_anonaddy_me-browser-action","screenshot-button"],"dirtyAreaCache":["nav-bar","toolbar-menubar","TabsToolbar","PersonalToolbar","widget-overflow-fixed-list","vertical-tabs"],"currentVersion":23,"newElementCount":14}'
 );
 user_pref("browser.toolbars.bookmarks.visibility", "never");
 
@@ -1345,6 +1345,9 @@ user_pref(
     "browser.pageActions.persistedActions",
     '{"version":1,"ids":["bookmark","bookmarkSeparator","copyURL","emailLink","sendToDevice","pocket","jid1-xufzosoflzsoxg_jetpack","addSearchEngine","_c607c8df-14a7-4f28-894f-29e8722976af_","webcompat-reporter_mozilla_org","screenshots_mozilla_org","pinTab","_testpilot-containers","_3c078156-979c-498b-8990-85f7987dd929_"],"idsInUrlbar":["pocket","_c607c8df-14a7-4f28-894f-29e8722976af_","_testpilot-containers","_3c078156-979c-498b-8990-85f7987dd929_","bookmark"],"idsInUrlbarPreProton":["pocket","_c607c8df-14a7-4f28-894f-29e8722976af_","bookmark"]}'
 );
+
+// disable sidebar
+user_pref("sidebar.revamp", "false");
 
 // disable paste with middle click
 user_pref("middlemouse.paste", false);
