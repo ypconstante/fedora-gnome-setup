@@ -14,7 +14,8 @@ my:dnf-install \
     autoconf \
     automake \
     gcc \
-    ncurses-devel
+    ncurses-devel \
+    openssl-devel
 
 my:step-begin "config"
 my:link-file "$ASSETS_DIR/dev_mise.toml" "$XDG_CONFIG_HOME/mise/config.toml"
