@@ -1358,6 +1358,9 @@ user_pref("browser.urlbar.ctrlCanonizesURLs", false);
 // disable pocket
 user_pref("extensions.pocket.enabled", false);
 
+// disable translate for portuguese
+user_pref("browser.translations.neverTranslateLanguages", "pt");
+
 // customize new tab page
 user_pref("browser.newtabpage.activity-stream.topSitesRows", 2);
 user_pref("browser.newtabpage.activity-stream.section.topstories.showDisclaimer", false);
