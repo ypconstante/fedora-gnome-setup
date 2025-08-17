@@ -9,3 +9,7 @@ visual-bell=false
 custom-command='fish'
 palette='gnome'
 use-custom-command=true
+
+[Shortcuts]
+move-next-tab='<Control>Tab'
+move-previous-tab='<Shift><Control>Tab'
