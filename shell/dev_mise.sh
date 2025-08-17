@@ -13,7 +13,9 @@ my:step-begin "install erlang dependencies"
 my:dnf-install \
     autoconf \
     automake \
+    cmake \
     gcc \
+    gcc-c++ \
     ncurses-devel \
     openssl-devel
 
