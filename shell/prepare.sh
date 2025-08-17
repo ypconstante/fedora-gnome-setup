@@ -7,7 +7,9 @@ my:dnf-remove \
     gnome-contacts \
     gnome-photos \
     gnome-tour \
+    ibus-m17n \
     ibus-typing-booster \
+    libpinyin \
     libreoffice* \
     rhythmbox \
     simple-scan \
