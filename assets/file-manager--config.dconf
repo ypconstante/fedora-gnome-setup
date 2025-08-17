@@ -1,5 +1,5 @@
 [org/gnome/nautilus/preferences]
-click-policy='single'
+click-policy='double'
 show-directory-item-counts='never'
 
 [org/gtk/gtk4/settings/file-chooser]
