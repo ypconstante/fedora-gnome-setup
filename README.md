@@ -55,8 +55,6 @@ Configure Chromium and Chrome:
 - Install [Chromium Web Store](https://github.com/NeverDecaf/chromium-web-store)
 - Install uBlock Origin
 
-[Install Nvidia drivers](https://rpmfusion.org/Howto/NVIDIA)
-
 Configure backup on Vorta
 
 Configure NewsFlash
