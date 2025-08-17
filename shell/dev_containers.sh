@@ -6,8 +6,7 @@ my:step-begin "install podman and docker-compose"
 my:dnf-install \
     podman \
     podman-docker \
-    podman-compose \
-    docker-compose
+    podman-compose
 
 my:step-begin "enable podman with docker-compose"
 systemctl --user enable podman.socket
