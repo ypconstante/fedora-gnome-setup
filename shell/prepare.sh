@@ -15,7 +15,8 @@ my:dnf-remove \
     simple-scan \
     sane-airscan \
     w3m \
-    yelp
+    yelp \
+    zram-generator-defaults
 sudo dnf autoremove -y -q
 sudo flatpak uninstall -y --unused
 
