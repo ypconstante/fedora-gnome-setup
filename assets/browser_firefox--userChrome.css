@@ -5,8 +5,12 @@
 }
 
 /* remove url bar background */
+#urlbar-container[breakout] {
+    --urlbar-container-height: 28px !important;
+}
+
 #urlbar[breakout] {
-    --autocomplete-popup-highlight-background:  var(--lwt-toolbar-field-focus);
+    --autocomplete-popup-highlight-background: var(--lwt-toolbar-field-focus);
 }
 
 #urlbar[breakout] > #urlbar-background {

@@ -1286,6 +1286,12 @@ user_pref("privacy.clearOnShutdown_v2.browsingHistoryAndDownloads", false); // 2
 user_pref("dom.webnotifications.enabled", false); // 7018
 user_pref("dom.webnotifications.serviceworker.enabled", false); // 7018
 
+/* resist fingerprint */
+user_pref("privacy.resistFingerprinting", true);
+user_pref("privacy.resistFingerprinting.letterboxing", true);
+user_pref("webgl.disabled", true);
+user_pref("privacy.spoof_english", 2);
+
 // CUSTOM
 user_pref("_user.js.parrot", "custom section syntax error");
 
