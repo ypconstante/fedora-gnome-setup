@@ -1320,9 +1320,6 @@ user_pref("browser.newtabpage.activity-stream.migrationExpired", true);
 // allow titlebar to be hidden via css
 user_pref("browser.tabs.drawInTitlebar", true);
 
-// disable native sidebar
-user_pref("sidebar.revamp", false)
-
 // theme
 user_pref("extensions.activeThemeID", "firefox-compact-dark@mozilla.org");
 user_pref("devtools.theme", "dark");
@@ -1345,7 +1342,7 @@ user_pref(
 );
 
 // disable sidebar
-user_pref("sidebar.revamp", "false");
+user_pref("sidebar.revamp", false);
 
 // disable paste with middle click
 user_pref("middlemouse.paste", false);
@@ -1383,5 +1380,4 @@ user_pref("browser.sessionstore.interval", 120000);
 user_pref("accessibility.typeaheadfind.enablesound", false);
 
 // reset options
-
 user_pref("_user.js.parrot", "user.js finished");
