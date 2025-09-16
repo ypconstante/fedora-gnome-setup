@@ -1272,10 +1272,6 @@ user_pref("browser.urlbar.pocket.featureGate", false); // [FF116+] [DEFAULT: fal
 /* END: internal custom pref to test for syntax errors ***/
 user_pref("_user.js.parrot", "SUCCESS: No no he's not dead, he's, he's restin'!");
 
-/* END: internal custom pref to test for syntax errors ***/
-user_pref("_user.js.parrot", "SUCCESS: No no he's not dead, he's, he's restin'!");
-
-/* override recipe: enable session restore ***/
 user_pref("browser.startup.page", 3); // 0102
 user_pref("browser.startup.homepage", "about:newtab"); // 0103
 user_pref("browser.newtabpage.enabled", true); // 0104
@@ -1283,14 +1279,10 @@ user_pref("layout.css.visited_links_enabled", false); // 0815
 user_pref("browser.shell.shortcutFavicons", true); // 1006
 user_pref("privacy.clearOnShutdown_v2.historyFormDataAndDownloads", false); // 2811
 user_pref("privacy.clearOnShutdown_v2.browsingHistoryAndDownloads", false); // 2812
+user_pref("privacy.spoof_english", 2); // 4506
+user_pref("webgl.disabled", true); // 4520
 user_pref("dom.webnotifications.enabled", false); // 7018
 user_pref("dom.webnotifications.serviceworker.enabled", false); // 7018
-
-/* resist fingerprint */
-user_pref("privacy.resistFingerprinting", true);
-user_pref("privacy.resistFingerprinting.letterboxing", true);
-user_pref("webgl.disabled", true);
-user_pref("privacy.spoof_english", 2);
 
 // CUSTOM
 user_pref("_user.js.parrot", "custom section syntax error");
