@@ -70,8 +70,8 @@ findbar {
 
 /* fixed width  */
 #sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] {
-    min-width: 316px !important;
-    max-width: 316px !important;
+    min-width: 336px !important;
+    max-width: 336px !important;
     border-right: none;
 }
 
