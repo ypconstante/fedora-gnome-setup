@@ -25,4 +25,3 @@ source "$(dirname "${BASH_SOURCE[0]}")/_base.sh"
 ./system-monitor.sh
 ./systemd.sh
 ./utility.sh
-./virtualization.sh
