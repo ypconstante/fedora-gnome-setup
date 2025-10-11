@@ -4,27 +4,6 @@
     visibility: collapse !important;
 }
 
-/* remove url bar background */
-#urlbar-container[breakout] {
-    --urlbar-container-height: 28px !important;
-}
-
-#urlbar[breakout] {
-    --autocomplete-popup-highlight-background: var(--lwt-toolbar-field-focus);
-}
-
-#urlbar[breakout] > #urlbar-background {
-    border: 0 !important;
-    border-radius: 0 !important;
-    box-shadow: none !important;
-    background-color: var(--toolbar-bgcolor) !important;
-}
-
-#urlbar-results > [selected] > .urlbarView-row-inner,
-.searchbar-engine-one-off-item[selected] {
-    background-color: var(--toolbar-field-focus-background-color) !important;
-}
-
 /* hide 'search with' text */
 .urlbarView-results > [type="search"] .urlbarView-title-separator,
 .urlbarView-results > [type="search"] .urlbarView-action {
