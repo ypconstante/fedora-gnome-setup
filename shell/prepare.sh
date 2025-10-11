@@ -10,6 +10,7 @@ my:dnf-remove \
     ibus-m17n \
     ibus-typing-booster \
     libpinyin \
+    python3-boto3 \
     rhythmbox \
     simple-scan \
     sane-airscan \
