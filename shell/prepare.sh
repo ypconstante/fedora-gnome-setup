@@ -10,7 +10,6 @@ my:dnf-remove \
     ibus-m17n \
     ibus-typing-booster \
     libpinyin \
-    libreoffice* \
     rhythmbox \
     simple-scan \
     sane-airscan \
