@@ -14,7 +14,7 @@ xkb-options=['caps:none']
 show-in-lock-screen=false
 
 [org/gnome/desktop/peripherals/touchpad]
-disable-while-typing=false
+disable-while-typing=true
 tap-to-click=true
 
 [org/gnome/desktop/privacy]
