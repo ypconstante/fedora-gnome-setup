@@ -23,11 +23,14 @@ remember-recent-files=false
 remove-old-trash-files=true
 remove-old-temp-files=true
 
-[org/gnome/desktop/wm/preferences]
-button-layout='appmenu:maximize,close'
+[org/gnome/desktop/screensaver]
+restart-enabled=true
 
 [org/gnome/desktop/search-providers]
 disabled=['org.gnome.Software.desktop', 'org.gnome.Terminal.desktop', 'org.gnome.Boxes.desktop', 'org.gnome.Contacts.desktop', 'org.mozilla.firefox.desktop']
+
+[org/gnome/desktop/wm/preferences]
+button-layout='appmenu:maximize,close'
 
 [org/gnome/desktop/wm/keybindings]
 close=['<Super>q']
