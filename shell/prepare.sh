@@ -4,6 +4,8 @@ source "$(dirname "${BASH_SOURCE[0]}")/_base.sh"
 
 my:step-begin "remove unused packages"
 my:dnf-remove \
+    anaconda \
+    'anaconda-*' \
     gnome-contacts \
     gnome-photos \
     gnome-tour \
