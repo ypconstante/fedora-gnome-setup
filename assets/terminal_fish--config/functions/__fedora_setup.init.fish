@@ -10,9 +10,6 @@ function __fedora_setup.init
     function __fedora_setup.theme
         set -U fish_greeting
 
-        # hydro config
-        set -U fish_prompt_pwd_dir_length 30
-
         # colors from darcula and monokai
         set -l foreground f8f8f2
         set -l selection 44475a
@@ -45,6 +42,19 @@ function __fedora_setup.init
         set -U fish_pager_color_prefix $cyan
         set -U fish_pager_color_completion $foreground
         set -U fish_pager_color_description $comment
+
+        # prompt config
+        set -U pure_enable_container_detection false
+        set -U pure_enable_single_line_prompt true
+        set -U pure_color_danger $red
+        set -U pure_color_info $cyan
+        set -U pure_color_light $foreground
+        set -U pure_color_mute $comment
+        set -U pure_color_git_branch $orange
+        set -U pure_color_normal $foreground
+        set -U pure_color_primary $cyan
+        set -U pure_color_success $green
+        set -U pure_color_warning $yellow
     end
 
     function __fedora_setup.plugins
