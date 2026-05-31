@@ -1391,5 +1391,8 @@ user_pref("browser.sessionstore.interval", 120000);
 // disable sound on find
 user_pref("accessibility.typeaheadfind.enablesound", false);
 
+// disable accessibility
+user_pref("accessibility.force_disabled", 1);
+
 // reset options
 user_pref("_user.js.parrot", "user.js finished");
