@@ -9,6 +9,10 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 
+# Telemetry
+export DO_NOT_TRACK=true
+export GH_TELEMETRY=false
+
 # Non standard
 export XDG_LIB_HOME="$HOME/.local/lib"
 
