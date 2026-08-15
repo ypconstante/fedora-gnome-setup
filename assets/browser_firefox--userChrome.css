@@ -1,7 +1,12 @@
+/*********************************** Header ***********************************/
+#navigator-toolbox {
+    height: 28px;
+}
+
 /*********************************** Toolbar **********************************/
-/* hide tabs  */
-#TabsToolbar {
-    visibility: collapse !important;
+/* remove vertical padding */
+#urlbar-container {
+    --urlbar-padding-block: 0;
 }
 
 /* hide 'search with' text */
@@ -40,25 +45,32 @@ findbar {
     border-top: none !important;
 }
 
-/***************************** Sidebar Extensions *****************************/
-
-/* hide header  */
-#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] #sidebar-header {
-    visibility: collapse !important;
-}
+/*********************************** Sidebar **********************************/
 
 /* fixed width  */
-#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] {
+#sidebar-container,
+#vertical-tabs {
     min-width: 336px !important;
     max-width: 336px !important;
-    border-right: none;
 }
 
-#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] + #sidebar-splitter {
+/* disable resize  */
+#sidebar-launcher-splitter {
     visibility: collapse !important;
 }
 
-#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] .TabsPanel .bottom-space {
-    display: none !important;
+/* hide other elements */
+#sidebar-tools-and-extensions-splitter,
+#sidebar-tools-and-extensions-splitter ~ *,
+#vertical-tabs #tabbrowser-tabs::after {
+  display: none !important;
 }
 
+/* tab style */
+#sidebar-main {
+    --tab-inner-inline-margin: 0.25rem;
+}
+
+#sidebar-main .tabbrowser-tab:not(:hover) .tab-close-button {
+    display: none;
+}
