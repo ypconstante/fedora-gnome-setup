@@ -11,15 +11,15 @@ function __fedora_setup.init
         set -U fish_greeting
 
         # colors from darcula and monokai
-        set -l foreground f8f8f2
-        set -l selection 44475a
-        set -l comment 9e9c8b
-        set -l red ff6188
-        set -l orange fd971f
-        set -l yellow ffd866
-        set -l green a9dc76
-        set -l purple ab9df2
-        set -l cyan 78dce8
+        set -g foreground f8f8f2
+        set -g selection 44475a
+        set -g comment 9e9c8b
+        set -g red ff6188
+        set -g orange fd971f
+        set -g yellow ffd866
+        set -g green a9dc76
+        set -g purple ab9df2
+        set -g cyan 78dce8
 
         # Syntax Highlighting Colors
         set -U fish_color_normal $foreground
