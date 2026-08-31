@@ -30,6 +30,5 @@ my:step-begin "enable vaapi"
 # https://fedoraproject.org/wiki/Firefox_Hardware_acceleration
 my:dnf-install \
     libavcodec-freeworld \
-    libva-utils
-
-my:dnf-install gstreamer1-vaapi
+    libva-utils \
+    mesa-va-drivers-freeworld \
